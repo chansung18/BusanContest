@@ -14,6 +14,7 @@
 		1EDA882A1BA904E600C5E93E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA88291BA904E600C5E93E /* Images.xcassets */; };
 		1EDA882D1BA904E600C5E93E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA882B1BA904E600C5E93E /* LaunchScreen.xib */; };
 		1EDA88391BA904E600C5E93E /* BusanAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA88381BA904E600C5E93E /* BusanAppTests.swift */; };
+		80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C571ED1BAC07EC00024E2F /* DustRaito.swift */; settings = {ASSET_TAGS = (); }; };
 		80F413B11BAA7A050082807D /* RadioactiveRay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F413B01BAA7A050082807D /* RadioactiveRay.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		1EDA88321BA904E600C5E93E /* BusanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDA88371BA904E600C5E93E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EDA88381BA904E600C5E93E /* BusanAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusanAppTests.swift; sourceTree = "<group>"; };
+		80C571ED1BAC07EC00024E2F /* DustRaito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DustRaito.swift; sourceTree = "<group>"; };
 		80F413B01BAA7A050082807D /* RadioactiveRay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioactiveRay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		1EDA881F1BA904E600C5E93E /* BusanApp */ = {
 			isa = PBXGroup;
 			children = (
+				80C571ED1BAC07EC00024E2F /* DustRaito.swift */,
 				1EDA88221BA904E600C5E93E /* AppDelegate.swift */,
 				1EDA88241BA904E600C5E93E /* ViewController.swift */,
 				80F413B01BAA7A050082807D /* RadioactiveRay.swift */,
@@ -220,6 +223,7 @@
 			files = (
 				80F413B11BAA7A050082807D /* RadioactiveRay.swift in Sources */,
 				1EDA88251BA904E600C5E93E /* ViewController.swift in Sources */,
+				80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */,
 				1EA15FE31BABD9BD00786F92 /* WeatherData.swift in Sources */,
 				1EDA88231BA904E600C5E93E /* AppDelegate.swift in Sources */,
 			);

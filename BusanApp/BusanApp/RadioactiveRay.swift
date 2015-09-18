@@ -47,6 +47,8 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     
     func beginParsing()
     {
+        
+       
         posts = []
         parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4825054000")!))!
         parser.delegate = self
@@ -106,27 +108,7 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
             if elementName == XMLWeatherEachElementStartingTagKey {
                 currentWeatherData = WeatherData()
             }
-            
-//            
-//            if (elementName as NSString).isEqualToString("category")
-//            {
-//                print("categorystart\n")
-//                elements = NSMutableDictionary()
-//            }
-            
-            
-            /*if (elementName as NSString).isEqualToString("item")
-            {
-            elements = NSMutableDictionary.alloc()
-            
-            
-            elements = [:]
-            title1 = NSMutableString.alloc()
-            title1 = ""
-            date = NSMutableString.alloc()
-            date = ""
-            }*/
-    }
+     }
     
     func parser(parser: NSXMLParser,
                 didEndElement elementName: String,
@@ -143,31 +125,6 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
             dataTagReadCount++
         }
         
-//        if (elementName as NSString).isEqualToString("category")
-//        {
-//            
-//            if !title1.isEqual(nil) {
-//                
-//                print("categorytitleend\n")
-//                //elements.setObject(title1, forKey: "category")
-//            }
-//            
-//            posts.addObject(elements)
-//            
-//            
-//        }
-      
-        
-        /*if (elementName as NSString).isEqualToString("item") {
-            if !title1.isEqual(nil) {
-                elements.setObject(title1, forKey: "title")
-            }
-            if !date.isEqual(nil) {
-                elements.setObject(date, forKey: "date")
-            }
-            
-            posts.addObject(elements)
-        }*/
     }
     
     //Tableview Methods

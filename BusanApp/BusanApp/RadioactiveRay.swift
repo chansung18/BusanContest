@@ -6,13 +6,23 @@
 //  Copyright (c) 2015 Eunkyo. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
+import Foundation
 
 class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     
-    @IBOutlet weak var tbData: UITableView!
+    let XMLWeatherEachElementStartingTagKey = "data"
+    let XMLWeatherEachElementHourTagKey = "hour"
+    let XMLWeatherEachElementDayTagKey = "day"
+    let XMLWeatherEachElementTempTagKey = "temp"
+    let XMLWeatherEachElementDescriptionTagKey = "wfKor"
+    let XMLWeatherEachElementRainExpectionTagKey = "pop"
+    let XMLWeatherEachElementWindDirectionTagKey = "wdEn"
+    let XMLWeatherEachElementWindSpeedTagKey = "ws"
+    let XMLWeatherEachElementHumidityRateTagKey = "reh"
     
+    @IBOutlet weak var tbData: UITableView!
     
     var parser = NSXMLParser()
     var posts = NSMutableArray()
@@ -23,49 +33,90 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     
     var category = String()
     
-
+    var isDataTagBeingExamined = false
+    var dataTagReadCount = 0
+    
+    var currentWeatherData: WeatherData?
+    var dataSet:[WeatherData] = [WeatherData]()
     
     override func viewDidLoad(){
-        
-        
-        println("ViewDidLoda")
+        print("ViewDidLoda\n")
+        dataTagReadCount = 0
         beginParsing()
     }
     
     func beginParsing()
     {
         posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4825054000")))!
+        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4825054000")!))!
         parser.delegate = self
         
-
         parser.parse()
         
         tbData!.reloadData()
-        println("bingParsin1g")
+        print("bingParsin1g\n")
     }
     
-    //XMLParser Methods
+    //When the parsing process is fully finished.
+    func parserDidEndDocument(parser: NSXMLParser) {
+        print("All examined data count = \(dataTagReadCount)");
+        
+        for data: WeatherData in dataSet {
+            print(data);
+        }
+    }
     
     func parser(parser: NSXMLParser,
-                didStartElement elementName: String,
-                namespaceURI: String?,
-                qualifiedName qName: String?,
-                attributes attributeDict: [NSObject : AnyObject])
-    {
-        element = elementName
-        println("parse1")
-        
-        if (elementName as NSString).isEqualToString("category")
-        {
-            println("categorystart")
-            elements = NSMutableDictionary.alloc()
+        foundCharacters string: String) {
+            if element == XMLWeatherEachElementHourTagKey {
+                currentWeatherData?.hour = (NSNumberFormatter().numberFromString(string)?.integerValue)!
+            }
+            else if element == XMLWeatherEachElementDayTagKey {
+                currentWeatherData?.day = (NSNumberFormatter().numberFromString(string)?.integerValue)!
+            }
+            else if element == XMLWeatherEachElementTempTagKey {
+                currentWeatherData?.temperature = (NSNumberFormatter().numberFromString(string)?.integerValue)!
+            }
+            else if element == XMLWeatherEachElementDescriptionTagKey {
+                currentWeatherData?.desc = string
+            }
+            else if element == XMLWeatherEachElementRainExpectionTagKey {
+                currentWeatherData?.rainExpectationRate = (NSNumberFormatter().numberFromString(string)?.integerValue)!
+            }
+            else if element == XMLWeatherEachElementWindDirectionTagKey {
+                currentWeatherData?.windDirection = string
+            }
+            else if element == XMLWeatherEachElementWindSpeedTagKey {
+                currentWeatherData?.windSpeed = (NSNumberFormatter().numberFromString(string)?.doubleValue)!
+            }
+            else if element == XMLWeatherEachElementHumidityRateTagKey {
+                currentWeatherData?.humidityRate = (NSNumberFormatter().numberFromString(string)?.integerValue)!
+            }
             
-        }
-        
-        
-        /*if (elementName as NSString).isEqualToString("item")
-        {
+    }
+    
+    //When every tags are encountered.
+    func parser(parser: NSXMLParser,
+        didStartElement elementName: String,
+        namespaceURI: String?,
+        qualifiedName qName: String?,
+        attributes attributeDict: [String : String]) {
+            element = elementName
+            
+            if elementName == XMLWeatherEachElementStartingTagKey {
+                currentWeatherData = WeatherData()
+            }
+            
+//            
+//            if (elementName as NSString).isEqualToString("category")
+//            {
+//                print("categorystart\n")
+//                elements = NSMutableDictionary()
+//            }
+            
+            
+            /*if (elementName as NSString).isEqualToString("item")
+            {
             elements = NSMutableDictionary.alloc()
             
             
@@ -74,7 +125,7 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
             title1 = ""
             date = NSMutableString.alloc()
             date = ""
-        }*/
+            }*/
     }
     
     func parser(parser: NSXMLParser,
@@ -82,21 +133,29 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
                 namespaceURI: String?,
                 qualifiedName qName: String?)
     {
-        println("parse2")
+        element = ""
         
-        if (elementName as NSString).isEqualToString("category")
-        {
-            
-            if !title1.isEqual(nil) {
-                
-                println("categorytitleend")
-                //elements.setObject(title1, forKey: "category")
+        if( elementName == XMLWeatherEachElementStartingTagKey ) {
+            if let weatherData = currentWeatherData {
+                dataSet.append(weatherData)
             }
             
-            posts.addObject(elements)
-            
-            
+            dataTagReadCount++
         }
+        
+//        if (elementName as NSString).isEqualToString("category")
+//        {
+//            
+//            if !title1.isEqual(nil) {
+//                
+//                print("categorytitleend\n")
+//                //elements.setObject(title1, forKey: "category")
+//            }
+//            
+//            posts.addObject(elements)
+//            
+//            
+//        }
       
         
         /*if (elementName as NSString).isEqualToString("item") {
@@ -111,31 +170,7 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
         }*/
     }
     
-    func parser(parser: NSXMLParser,
-                        foundCharacters string: String?)
-    {
-        
-        println("parse3")
-        
-        if element.isEqualToString("category") {
-            
-            
-            title1.appendString(string!)
-            println(title1)
-            
-        }
-        
-        
-  
-        /*if element.isEqualToString("title") {
-            title1.appendString(string!)
-        } else if element.isEqualToString("pubDate") {
-            date.appendString(string!)
-        }*/
-    }
-    
     //Tableview Methods
-    
     func tableView(tableView: UITableView,
                     numberOfRowsInSection section: Int) -> Int
     {
@@ -144,7 +179,7 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell : UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        var cell : UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("Cell")
         if(cell == nil) {
             cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! UITableViewCell;
         }

@@ -34,7 +34,6 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     
     func beginParsing()
     {
-        
         posts = []
         parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4825054000")))!
         parser.delegate = self
@@ -48,7 +47,11 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     
     //XMLParser Methods
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject])
+    func parser(parser: NSXMLParser,
+                didStartElement elementName: String,
+                namespaceURI: String?,
+                qualifiedName qName: String?,
+                attributes attributeDict: [NSObject : AnyObject])
     {
         element = elementName
         println("parse1")
@@ -74,7 +77,10 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
         }*/
     }
     
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
+    func parser(parser: NSXMLParser,
+                didEndElement elementName: String,
+                namespaceURI: String?,
+                qualifiedName qName: String?)
     {
         println("parse2")
         
@@ -105,7 +111,8 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
         }*/
     }
     
-    func parser(parser: NSXMLParser, foundCharacters string: String?)
+    func parser(parser: NSXMLParser,
+                        foundCharacters string: String?)
     {
         
         println("parse3")
@@ -129,7 +136,8 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     
     //Tableview Methods
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(tableView: UITableView,
+                    numberOfRowsInSection section: Int) -> Int
     {
         return posts.count
     }

@@ -21,6 +21,8 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     var title1 = NSMutableString()
     var date = NSMutableString()
     
+    var category = String()
+    
 
     
     override func viewDidLoad(){
@@ -51,9 +53,11 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
         element = elementName
         println("parse1")
         
-        if (elementName as NSString).isEqualToString("data")
+        if (elementName as NSString).isEqualToString("category")
         {
-            println("data")
+            println("categorystart")
+            elements = NSMutableDictionary.alloc()
+            
         }
         
         
@@ -74,6 +78,22 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     {
         println("parse2")
         
+        if (elementName as NSString).isEqualToString("category")
+        {
+            
+            if !title1.isEqual(nil) {
+                elements.setObject(title1, forKey: "title")
+            }
+            if !date.isEqual(nil) {
+                elements.setObject(date, forKey: "date")
+            }
+            
+            posts.addObject(elements)
+            println("categorytitleend")
+            
+        }
+      
+        
         /*if (elementName as NSString).isEqualToString("item") {
             if !title1.isEqual(nil) {
                 elements.setObject(title1, forKey: "title")
@@ -90,6 +110,8 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     {
         
         println("parse3")
+        
+  
         /*if element.isEqualToString("title") {
             title1.appendString(string!)
         } else if element.isEqualToString("pubDate") {

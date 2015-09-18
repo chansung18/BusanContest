@@ -36,7 +36,7 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     {
         
         posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://images.apple.com/main/rss/hotnews/hotnews.rss")))!
+        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4825054000")))!
         parser.delegate = self
         
 
@@ -82,14 +82,13 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
         {
             
             if !title1.isEqual(nil) {
-                elements.setObject(title1, forKey: "title")
-            }
-            if !date.isEqual(nil) {
-                elements.setObject(date, forKey: "date")
+                
+                println("categorytitleend")
+                //elements.setObject(title1, forKey: "category")
             }
             
             posts.addObject(elements)
-            println("categorytitleend")
+            
             
         }
       
@@ -110,6 +109,15 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     {
         
         println("parse3")
+        
+        if element.isEqualToString("category") {
+            
+            
+            title1.appendString(string!)
+            println(title1)
+            
+        }
+        
         
   
         /*if element.isEqualToString("title") {

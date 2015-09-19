@@ -48,6 +48,10 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     func beginParsing()
     {
         
+        /* imfo zone
+        
+        
+        */
        
         posts = []
         parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4825054000")!))!

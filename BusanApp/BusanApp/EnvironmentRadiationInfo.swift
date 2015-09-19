@@ -38,7 +38,7 @@ class EnvironmetRadiationInfo: UIViewController, NSXMLParserDelegate{
 //    var date = NSMutableString()
 //    var elements = NSMutableDictionary()
     
-       
+    
     override func viewDidLoad(){
         print("ViewDidLoda\n")
         dataTagReadCount = 0

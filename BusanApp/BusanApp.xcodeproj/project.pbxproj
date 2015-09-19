@@ -16,6 +16,8 @@
 		1EDA88391BA904E600C5E93E /* BusanAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA88381BA904E600C5E93E /* BusanAppTests.swift */; };
 		806A09E91BAD489500CC6D98 /* EnvironmentRadiationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09E81BAD489500CC6D98 /* EnvironmentRadiationInfo.swift */; settings = {ASSET_TAGS = (); }; };
 		806A09EB1BAD50F200CC6D98 /* RadiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09EA1BAD50F200CC6D98 /* RadiationData.swift */; settings = {ASSET_TAGS = (); }; };
+		806A09EF1BAD872D00CC6D98 /* WaterQualityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09EE1BAD872D00CC6D98 /* WaterQualityInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		806A09F11BAD903F00CC6D98 /* WaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09F01BAD903F00CC6D98 /* WaterData.swift */; settings = {ASSET_TAGS = (); }; };
 		80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C571ED1BAC07EC00024E2F /* DustRaito.swift */; settings = {ASSET_TAGS = (); }; };
 		80F413B11BAA7A050082807D /* RadioactiveRay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F413B01BAA7A050082807D /* RadioactiveRay.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		1EDA88381BA904E600C5E93E /* BusanAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusanAppTests.swift; sourceTree = "<group>"; };
 		806A09E81BAD489500CC6D98 /* EnvironmentRadiationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentRadiationInfo.swift; sourceTree = "<group>"; };
 		806A09EA1BAD50F200CC6D98 /* RadiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiationData.swift; sourceTree = "<group>"; };
+		806A09EE1BAD872D00CC6D98 /* WaterQualityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterQualityInfo.swift; sourceTree = "<group>"; };
+		806A09F01BAD903F00CC6D98 /* WaterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterData.swift; sourceTree = "<group>"; };
 		80C571ED1BAC07EC00024E2F /* DustRaito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DustRaito.swift; sourceTree = "<group>"; };
 		80F413B01BAA7A050082807D /* RadioactiveRay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioactiveRay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +91,8 @@
 		1EDA881F1BA904E600C5E93E /* BusanApp */ = {
 			isa = PBXGroup;
 			children = (
+				806A09F01BAD903F00CC6D98 /* WaterData.swift */,
+				806A09EE1BAD872D00CC6D98 /* WaterQualityInfo.swift */,
 				806A09EA1BAD50F200CC6D98 /* RadiationData.swift */,
 				806A09E81BAD489500CC6D98 /* EnvironmentRadiationInfo.swift */,
 				80C571ED1BAC07EC00024E2F /* DustRaito.swift */,
@@ -228,7 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F413B11BAA7A050082807D /* RadioactiveRay.swift in Sources */,
+				806A09EF1BAD872D00CC6D98 /* WaterQualityInfo.swift in Sources */,
 				1EDA88251BA904E600C5E93E /* ViewController.swift in Sources */,
+				806A09F11BAD903F00CC6D98 /* WaterData.swift in Sources */,
 				80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */,
 				1EA15FE31BABD9BD00786F92 /* WeatherData.swift in Sources */,
 				806A09EB1BAD50F200CC6D98 /* RadiationData.swift in Sources */,

@@ -64,9 +64,14 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
         
         var queryOfInspecArea = "영도구"
             
-        let url = "\(getDrinkableWaterAreaURL)\(queryOfInspecArea)\(serviceKey)"
+        let url = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo?numOfRows=50&inspecArea=영도구&ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
+        
+        
+        
+        
         posts = []
         parser = NSXMLParser(contentsOfURL:(NSURL(string: url)!))!
+
         parser.delegate = self
         parser.parse()
         print("-----------url----------\n" + url)

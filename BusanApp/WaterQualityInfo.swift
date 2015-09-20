@@ -58,25 +58,34 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
             }
         }
         
-        let getDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo?numOfRows=50&inspecArea="
-        let getUnDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getUndrinkableWaterInfo?inspecArea="
-        let serviceKey = "&ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
+        let getDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo"
+//        let getUnDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getUndrinkableWaterInfo?inspecArea="
+        let serviceKey = "hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
         
-        var queryOfInspecArea = "영도구"
-            
-        let url = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo?numOfRows=50&inspecArea=영도구&ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
+        let queryOfInspecArea = "영도구".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        
+        let urlInString = "\(getDrinkableWaterAreaURL)?numOfRows=\(5)&gu=\(queryOfInspecArea)&ServiceKey=\(serviceKey)"
+
+//        "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo?numOfRows=50&inspecArea=영도구&ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
         
         
         
         
         posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string: url)!))!
+        
+        print("url = \(urlInString)")
+        
+        if let url = NSURL(string: urlInString) {
+            parser = NSXMLParser(contentsOfURL:(url))!
+        }
+        else {
+            print("NSURL is NIL")
+        }
+        
+//        parser = NSXMLParser(contentsOfURL:(NSURL(string: url)!))!
 
         parser.delegate = self
         parser.parse()
-        print("-----------url----------\n" + url)
-            
-            
             
           /*  url = getUnDrinkableWaterAreaURL + serviceKey
             posts = []

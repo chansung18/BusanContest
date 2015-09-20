@@ -15,7 +15,7 @@ class WaterData: CustomStringConvertible {
     var inspecArea = ""
     var inspecPoint = ""
     
-    var reslut = ""
+    var result = ""
     var chemicalElements = [String]()
     
     
@@ -23,7 +23,7 @@ class WaterData: CustomStringConvertible {
     
     var description: String {
         get {
-            return "[inspecArea=\(inspecArea)    \(inspecPoint), arry \(chemicalElements)";
+            return "[inspecArea=\(inspecArea), inspecPoint=\(inspecPoint),result=\(result) arry=\(chemicalElements)";
         }
     }
 }

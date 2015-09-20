@@ -1,5 +1,5 @@
 //
-//  WaterQualityInfo.swift
+//  EnvrionmentaRadiationInfo.swift
 //  BusanApp
 //
 //  Created by Eunkyo, Seo on 9/19/15.
@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 
-class WaterQualityInfo: UIViewController, NSXMLParserDelegate {
+
+class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
     
     
     
@@ -18,10 +19,6 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate {
     let XMLWaterEachElementInspecAreaTagKey = "inspecArea"
     let XMLWaterEachElementInspecPointTagKey = "inspecPoint"
     let XMLWaterEachElementResultTagKey = "result"
-    var XMLWaterEachElementChemicalElementsTagKey = [String]()
-    
-  //  let XMLRadiationEachElementOneHourAveDataTagKey = "oneHourAveData"
-  //  let XMLRadiationEachElementOnehourAveTimeTagKey = "oneHourAveTime"
     
     
     var parser = NSXMLParser()
@@ -34,8 +31,12 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate {
     
     var currentWaterData: WaterData?
     var dataSet:[WaterData] = [WaterData]()
-  
+    var XMLWaterEachElementChemicalElementsTagKey = [String]()
     
+    
+    //    var title1 = NSMutableString()
+    //    var date = NSMutableString()
+    //    var elements = NSMutableDictionary()
     
     
     override func viewDidLoad(){
@@ -44,7 +45,6 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate {
         beginParsing()
     }
     
-    
     func beginParsing()
     {
         for i in 1 ... 47{
@@ -52,37 +52,35 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate {
                 XMLWaterEachElementChemicalElementsTagKey.append("water0\(i)")
             }
             else{
-                XMLWaterEachElementChemicalElementsTagKey.append("water+\(i)")
+                
+                XMLWaterEachElementChemicalElementsTagKey.append("water0\(i)")
+                
             }
-            
         }
         
+        let getDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo?numOfRows=50&inspecArea="
+        let getUnDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getUndrinkableWaterInfo?inspecArea="
+        let serviceKey = "&ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
         
-        let getDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo"
-        let getUnDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getUndrinkableWaterInfo"
-        let serviceKey = "?ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
-        
-        
-        var url = getDrinkableWaterAreaURL + serviceKey
+        var queryOfInspecArea = "영도구"
+            
+        let url = "\(getDrinkableWaterAreaURL)\(queryOfInspecArea)\(serviceKey)"
         posts = []
         parser = NSXMLParser(contentsOfURL:(NSURL(string: url)!))!
         parser.delegate = self
         parser.parse()
         print("-----------url----------\n" + url)
-        
-        
-        
-        url = getUnDrinkableWaterAreaURL + serviceKey
-        posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string: url)!))!
-        parser.delegate = self
-        parser.parse()
-        print("-----------url----------\n" + url)
-        
-        
+            
+            
+            
+          /*  url = getUnDrinkableWaterAreaURL + serviceKey
+            posts = []
+            parser = NSXMLParser(contentsOfURL:(NSURL(string: url)!))!
+            parser.delegate = self
+            parser.parse()
+            print("-----------url----------\n" + url)*/
         
     }
-    
     
     
     func parserDidStartDocument(parser: NSXMLParser) {
@@ -123,17 +121,18 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate {
                 currentWaterData?.inspecPoint = string
             }
             else if element == XMLWaterEachElementResultTagKey{
-                currentWaterData?.reslut = string
+                currentWaterData?.result = string
             }
-            
-            for i in 1 ... 47{
-                if element == XMLWaterEachElementChemicalElementsTagKey[i]{
-                    currentWaterData?.chemicalElements[i] = string
+            /*else{
+    
+                // let tmepElement = XMLWaterEachElementChemicalElementsTagKey..
+                if  XMLWaterEachElementChemicalElementsTagKey.contains(element as String){
+                    currentWaterData?.chemicalElements.append(string)
+                    print("\(element) = \(string)")
+                    
                 }
                 
-            }
-
-            
+            }*/
     }
     
     func parser(parser: NSXMLParser,
@@ -160,11 +159,4 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate {
             print(data);
         }
     }
-
-    
-    
-    
-    
-    
-    
 }

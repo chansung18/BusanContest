@@ -48,23 +48,27 @@ class EnvironmetRadiationInfo: UIViewController, NSXMLParserDelegate{
     func beginParsing()
     {
         
-        let getEnvironmentalRadiationPlaceListURL = "http://opendata.busan.go.kr/openapi/service/EnvironmentalRadiationInfoService/getEnvironmentalRadiationInfoDetail?numOfRows=1&pageNo=1&seq="
+        let getEnvironmentalRadiationPlaceListURL = "http://opendata.busan.go.kr/openapi/service/EnvironmentalRadiationInfoService/getEnvironmentalRadiationInfoDetail?"
         let serviceKey = "ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
         var seqISDistrictNumber = 2
         
-        let url = "\(getEnvironmentalRadiationPlaceListURL)\(seqISDistrictNumber)&\(serviceKey)"
+        let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(10)&seq=\(seqISDistrictNumber)&\(serviceKey)"
         
 
         
         
         posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string: url)!))!
+        if let url = NSURL(string: urlInString) {
+            parser = NSXMLParser(contentsOfURL:(url))!
+        }
+        else {
+            print("NSURL in NiL")
+        }
+        
         parser.delegate = self
         
         parser.parse()
         
-
-        print("-----------url----------\n" + url)
     }
     
     

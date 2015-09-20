@@ -52,9 +52,22 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
         
         
         */
+        
+        let urlOfWatherKMA = "http://www.kma.go.kr/wid/queryDFSRSS.jsp?"
+        var zone = "4825054000"
+        var urlInString = "\(urlOfWatherKMA)zone=\(zone)"
+        
        
         posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4825054000")!))!
+        
+        if let url = NSURL(string: urlInString) {
+                parser = NSXMLParser(contentsOfURL:(url))!
+        }
+        else {
+            print("NSURL is NIL")
+        }
+        
+
         parser.delegate = self
         
         parser.parse()

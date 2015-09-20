@@ -53,7 +53,7 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
             }
             else{
                 
-                XMLWaterEachElementChemicalElementsTagKey.append("water0\(i)")
+                XMLWaterEachElementChemicalElementsTagKey.append("water\(i)")
                 
             }
         }
@@ -64,7 +64,7 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
         
         let queryOfInspecArea = "영도구".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         
-        let urlInString = "\(getDrinkableWaterAreaURL)?numOfRows=\(5)&gu=\(queryOfInspecArea)&ServiceKey=\(serviceKey)"
+        let urlInString = "\(getDrinkableWaterAreaURL)?numOfRows=\(100)&gu=\(queryOfInspecArea)&ServiceKey=\(serviceKey)"
 
 //        "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getDrinkableWaterQualityInfo?numOfRows=50&inspecArea=영도구&ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
         
@@ -137,7 +137,7 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
             else if element == XMLWaterEachElementResultTagKey{
                 currentWaterData?.result = string
             }
-            /*else{
+            else{
     
                 // let tmepElement = XMLWaterEachElementChemicalElementsTagKey..
                 if  XMLWaterEachElementChemicalElementsTagKey.contains(element as String){
@@ -146,7 +146,7 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
                     
                 }
                 
-            }*/
+            }
     }
     
     func parser(parser: NSXMLParser,

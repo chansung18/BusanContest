@@ -11,9 +11,6 @@ import UIKit
 
 class DustRaito: UIViewController, NSXMLParserDelegate {
     
-    
-
-    
     var parser = NSXMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()

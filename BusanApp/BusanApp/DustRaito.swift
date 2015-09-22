@@ -19,11 +19,10 @@ class DustRaito: UIViewController, NSXMLParserDelegate {
     var date = NSMutableString()
     
     override func viewDidLoad() {
-        
-        print("????")
+        self.navigationController?.navigationBarHidden = false;
+        self.navigationController?.navigationBar.topItem?.title = "공기질"
         
         beginParsing()
-        
     }
     
     func beginParsing()

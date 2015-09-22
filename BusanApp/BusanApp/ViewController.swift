@@ -15,9 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        var graphPoints:[Int] = [4, 2, 6, 4, 5, 8, 3]
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true;
     }
 
     override func didReceiveMemoryWarning() {

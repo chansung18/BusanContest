@@ -40,6 +40,9 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     var dataSet:[WeatherData] = [WeatherData]()
     
     override func viewDidLoad(){
+        self.navigationController?.navigationBarHidden = false;
+        self.navigationController?.navigationBar.topItem?.title = "방사능"
+        
         dataTagReadCount = 0
         beginParsing()
     }

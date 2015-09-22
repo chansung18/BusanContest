@@ -39,8 +39,10 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
     //    var elements = NSMutableDictionary()
     
     
-    override func viewDidLoad(){
-        print("ViewDidLoda\n")
+    override func viewDidLoad() {
+        self.navigationController?.navigationBarHidden = false;
+        self.navigationController?.navigationBar.topItem?.title = "식수질"
+        
         dataTagReadCount = 0
         beginParsing()
     }

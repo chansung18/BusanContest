@@ -254,7 +254,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMt-4v-xtY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMt-4v-xtY" customClass="LineChart" customModule="BusanApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="267" width="560" height="108"/>
                                 <animations/>
                             </view>
@@ -372,7 +372,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="선택" id="ICR-tL-Lj7"/>
                     <connections>
-                        <outlet property="graphView" destination="sMt-4v-xtY" id="b4z-KU-dHQ"/>
+                        <outlet property="graphView" destination="sMt-4v-xtY" id="h2e-40-rkU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

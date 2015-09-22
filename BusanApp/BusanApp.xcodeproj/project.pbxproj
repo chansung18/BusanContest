@@ -20,8 +20,7 @@
 		1EE1B7281BB123FC00D05BDD /* test_icon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE1B7271BB123FC00D05BDD /* test_icon4.png */; settings = {ASSET_TAGS = (); }; };
 		1EE1B72C1BB1252100D05BDD /* test_icon5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE1B72B1BB1252100D05BDD /* test_icon5.png */; settings = {ASSET_TAGS = (); }; };
 		1EE1B72E1BB14D0400D05BDD /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE1B72D1BB14D0400D05BDD /* GraphView.swift */; settings = {ASSET_TAGS = (); }; };
-		1EE1B73B1BB1675D00D05BDD /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE1B73A1BB166FA00D05BDD /* Charts.framework */; };
-		1EE1B73D1BB1675D00D05BDD /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE1B73A1BB166FA00D05BDD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1EE1B7681BB16B7700D05BDD /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE1B7671BB16B7700D05BDD /* LineChart.swift */; settings = {ASSET_TAGS = (); }; };
 		806A09E91BAD489500CC6D98 /* EnvironmentRadiationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09E81BAD489500CC6D98 /* EnvironmentRadiationInfo.swift */; settings = {ASSET_TAGS = (); }; };
 		806A09EB1BAD50F200CC6D98 /* RadiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09EA1BAD50F200CC6D98 /* RadiationData.swift */; settings = {ASSET_TAGS = (); }; };
 		806A09F11BAD903F00CC6D98 /* WaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09F01BAD903F00CC6D98 /* WaterData.swift */; settings = {ASSET_TAGS = (); }; };
@@ -38,20 +37,6 @@
 			remoteGlobalIDString = 1EDA881C1BA904E600C5E93E;
 			remoteInfo = BusanApp;
 		};
-		1EE1B7391BB166FA00D05BDD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EE1B7351BB166FA00D05BDD /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
-			remoteInfo = Charts;
-		};
-		1EE1B73E1BB1675D00D05BDD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EE1B7351BB166FA00D05BDD /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
-			remoteInfo = Charts;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,7 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1EE1B73D1BB1675D00D05BDD /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +70,7 @@
 		1EE1B7271BB123FC00D05BDD /* test_icon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_icon4.png; sourceTree = "<group>"; };
 		1EE1B72B1BB1252100D05BDD /* test_icon5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_icon5.png; sourceTree = "<group>"; };
 		1EE1B72D1BB14D0400D05BDD /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		1EE1B7351BB166FA00D05BDD /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/ios-charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
+		1EE1B7671BB16B7700D05BDD /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		806A09E81BAD489500CC6D98 /* EnvironmentRadiationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentRadiationInfo.swift; sourceTree = "<group>"; };
 		806A09EA1BAD50F200CC6D98 /* RadiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiationData.swift; sourceTree = "<group>"; };
 		806A09F01BAD903F00CC6D98 /* WaterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterData.swift; sourceTree = "<group>"; };
@@ -100,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EE1B73B1BB1675D00D05BDD /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +100,6 @@
 		1EDA88141BA904E600C5E93E = {
 			isa = PBXGroup;
 			children = (
-				1EE1B7351BB166FA00D05BDD /* Charts.xcodeproj */,
 				1EDA881F1BA904E600C5E93E /* BusanApp */,
 				1EDA881E1BA904E600C5E93E /* Products */,
 				1EDA88351BA904E600C5E93E /* BusanAppTests */,
@@ -136,6 +118,7 @@
 		1EDA881F1BA904E600C5E93E /* BusanApp */ = {
 			isa = PBXGroup;
 			children = (
+				1EE1B7661BB16B6E00D05BDD /* GraphLib */,
 				1EE1B71C1BB1105C00D05BDD /* Assets */,
 				80D3555E1BADAA2100E2A386 /* WaterQualityInfo.swift */,
 				806A09F01BAD903F00CC6D98 /* WaterData.swift */,
@@ -192,12 +175,12 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		1EE1B7361BB166FA00D05BDD /* Products */ = {
+		1EE1B7661BB16B6E00D05BDD /* GraphLib */ = {
 			isa = PBXGroup;
 			children = (
-				1EE1B73A1BB166FA00D05BDD /* Charts.framework */,
+				1EE1B7671BB16B7700D05BDD /* LineChart.swift */,
 			);
-			name = Products;
+			name = GraphLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +198,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1EE1B73F1BB1675D00D05BDD /* PBXTargetDependency */,
 			);
 			name = BusanApp;
 			productName = BusanApp;
@@ -270,12 +252,6 @@
 			mainGroup = 1EDA88141BA904E600C5E93E;
 			productRefGroup = 1EDA881E1BA904E600C5E93E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 1EE1B7361BB166FA00D05BDD /* Products */;
-					ProjectRef = 1EE1B7351BB166FA00D05BDD /* Charts.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1EDA881C1BA904E600C5E93E /* BusanApp */,
@@ -283,16 +259,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		1EE1B73A1BB166FA00D05BDD /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = 1EE1B7391BB166FA00D05BDD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1EDA881B1BA904E600C5E93E /* Resources */ = {
@@ -328,6 +294,7 @@
 				80F413B11BAA7A050082807D /* RadioactiveRay.swift in Sources */,
 				1EDA88251BA904E600C5E93E /* ViewController.swift in Sources */,
 				806A09F11BAD903F00CC6D98 /* WaterData.swift in Sources */,
+				1EE1B7681BB16B7700D05BDD /* LineChart.swift in Sources */,
 				80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */,
 				1EE1B72E1BB14D0400D05BDD /* GraphView.swift in Sources */,
 				1EA15FE31BABD9BD00786F92 /* WeatherData.swift in Sources */,
@@ -352,11 +319,6 @@
 			isa = PBXTargetDependency;
 			target = 1EDA881C1BA904E600C5E93E /* BusanApp */;
 			targetProxy = 1EDA88331BA904E600C5E93E /* PBXContainerItemProxy */;
-		};
-		1EE1B73F1BB1675D00D05BDD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = 1EE1B73E1BB1675D00D05BDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

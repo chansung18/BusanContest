@@ -40,7 +40,6 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
     var dataSet:[WeatherData] = [WeatherData]()
     
     override func viewDidLoad(){
-        print("ViewDidLoda\n")
         dataTagReadCount = 0
         beginParsing()
     }
@@ -54,8 +53,8 @@ class RadioactiveRay: UIViewController, NSXMLParserDelegate {
         */
         
         let urlOfWatherKMA = "http://www.kma.go.kr/wid/queryDFSRSS.jsp?"
-        var zone = "4825054000"
-        var urlInString = "\(urlOfWatherKMA)zone=\(zone)"
+        let zone = "4825054000"
+        let urlInString = "\(urlOfWatherKMA)zone=\(zone)"
         
        
         posts = []

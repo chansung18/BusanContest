@@ -62,7 +62,7 @@ class WaterQualityInfo: UIViewController, NSXMLParserDelegate{
 //        let getUnDrinkableWaterAreaURL = "http://opendata.busan.go.kr/openapi/service/DrinkableWaterQualityInfoService/getUndrinkableWaterInfo?inspecArea="
         let serviceKey = "hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
         
-        let queryOfInspecArea = "영도구".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let queryOfInspecArea = "영도구".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
         let urlInString = "\(getDrinkableWaterAreaURL)?numOfRows=\(100)&gu=\(queryOfInspecArea)&ServiceKey=\(serviceKey)"
 

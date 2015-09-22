@@ -14,6 +14,8 @@
 		1EDA882A1BA904E600C5E93E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA88291BA904E600C5E93E /* Images.xcassets */; };
 		1EDA882D1BA904E600C5E93E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA882B1BA904E600C5E93E /* LaunchScreen.xib */; };
 		1EDA88391BA904E600C5E93E /* BusanAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA88381BA904E600C5E93E /* BusanAppTests.swift */; };
+		1EE1B7231BB110C100D05BDD /* test_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE1B7211BB110C100D05BDD /* test_icon2.png */; settings = {ASSET_TAGS = (); }; };
+		1EE1B7241BB110C100D05BDD /* test_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE1B7221BB110C100D05BDD /* test_icon1.png */; settings = {ASSET_TAGS = (); }; };
 		806A09E91BAD489500CC6D98 /* EnvironmentRadiationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09E81BAD489500CC6D98 /* EnvironmentRadiationInfo.swift */; settings = {ASSET_TAGS = (); }; };
 		806A09EB1BAD50F200CC6D98 /* RadiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09EA1BAD50F200CC6D98 /* RadiationData.swift */; settings = {ASSET_TAGS = (); }; };
 		806A09F11BAD903F00CC6D98 /* WaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09F01BAD903F00CC6D98 /* WaterData.swift */; settings = {ASSET_TAGS = (); }; };
@@ -44,6 +46,8 @@
 		1EDA88321BA904E600C5E93E /* BusanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDA88371BA904E600C5E93E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EDA88381BA904E600C5E93E /* BusanAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusanAppTests.swift; sourceTree = "<group>"; };
+		1EE1B7211BB110C100D05BDD /* test_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_icon2.png; sourceTree = "<group>"; };
+		1EE1B7221BB110C100D05BDD /* test_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_icon1.png; sourceTree = "<group>"; };
 		806A09E81BAD489500CC6D98 /* EnvironmentRadiationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentRadiationInfo.swift; sourceTree = "<group>"; };
 		806A09EA1BAD50F200CC6D98 /* RadiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiationData.swift; sourceTree = "<group>"; };
 		806A09F01BAD903F00CC6D98 /* WaterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterData.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		1EDA881F1BA904E600C5E93E /* BusanApp */ = {
 			isa = PBXGroup;
 			children = (
+				1EE1B71C1BB1105C00D05BDD /* Assets */,
 				80D3555E1BADAA2100E2A386 /* WaterQualityInfo.swift */,
 				806A09F01BAD903F00CC6D98 /* WaterData.swift */,
 				806A09EA1BAD50F200CC6D98 /* RadiationData.swift */,
@@ -131,6 +136,15 @@
 				1EDA88371BA904E600C5E93E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1EE1B71C1BB1105C00D05BDD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1EE1B7211BB110C100D05BDD /* test_icon2.png */,
+				1EE1B7221BB110C100D05BDD /* test_icon1.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +230,8 @@
 				1EDA88281BA904E600C5E93E /* Main.storyboard in Resources */,
 				1EDA882D1BA904E600C5E93E /* LaunchScreen.xib in Resources */,
 				1EDA882A1BA904E600C5E93E /* Images.xcassets in Resources */,
+				1EE1B7231BB110C100D05BDD /* test_icon2.png in Resources */,
+				1EE1B7241BB110C100D05BDD /* test_icon1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

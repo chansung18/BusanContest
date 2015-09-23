@@ -98,7 +98,7 @@
                                     <constraint firstAttribute="height" constant="75" id="nEb-UG-y5X"/>
                                     <constraint firstAttribute="height" constant="100" id="q0t-Cu-iIC"/>
                                 </constraints>
-                                <state key="normal" title="대기질" image="test_icon4"/>
+                                <state key="normal" title="대기질" image="test_icon7"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="q0t-Cu-iIC"/>
@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="height" constant="100" id="K8d-of-CwD"/>
                                     <constraint firstAttribute="height" constant="75" id="RGd-Y7-atz"/>
                                 </constraints>
-                                <state key="normal" title="방사능" image="test_icon3"/>
+                                <state key="normal" title="방사능" image="test_icon7"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="K8d-of-CwD"/>
@@ -126,6 +126,21 @@
                                     <segue destination="amm-Ny-L1P" kind="show" id="QES-0W-v9o"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4q-BC-lc4">
+                                <rect key="frame" x="151" y="490" width="75" height="75"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="1G5-sX-I1Q"/>
+                                    <constraint firstAttribute="height" constant="75" id="83U-gG-U1l"/>
+                                    <constraint firstAttribute="height" constant="100" id="pcr-x9-vhS"/>
+                                </constraints>
+                                <state key="normal" title="방사능_게이지" image="test_icon6"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pcr-x9-vhS"/>
+                                    </mask>
+                                </variation>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18e-3O-GQ3">
                                 <rect key="frame" x="365" y="490" width="75" height="75"/>
                                 <animations/>
@@ -134,7 +149,7 @@
                                     <constraint firstAttribute="height" constant="100" id="YeO-Rw-kZf"/>
                                     <constraint firstAttribute="width" constant="75" id="rQA-M4-Bi6"/>
                                 </constraints>
-                                <state key="normal" title="식수질" image="test_icon5"/>
+                                <state key="normal" title="식수질" image="test_icon7"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="YeO-Rw-kZf"/>
@@ -258,6 +273,36 @@
                                 <rect key="frame" x="20" y="267" width="560" height="108"/>
                                 <animations/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQM-Ev-xhB">
+                                <rect key="frame" x="255" y="490" width="75" height="75"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2K9-27-0qT"/>
+                                    <constraint firstAttribute="width" constant="75" id="Fwj-fH-Qcw"/>
+                                    <constraint firstAttribute="height" constant="75" id="H1x-Bf-96x"/>
+                                </constraints>
+                                <state key="normal" title="미세먼지_게이지" image="test_icon6"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2K9-27-0qT"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaX-9F-C3P">
+                                <rect key="frame" x="365" y="490" width="75" height="75"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1X4-sd-5IS"/>
+                                    <constraint firstAttribute="height" constant="75" id="7hJ-yZ-2nM"/>
+                                    <constraint firstAttribute="width" constant="75" id="swW-qy-VcI"/>
+                                </constraints>
+                                <state key="normal" title="식수질_게이지" image="test_icon6"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1X4-sd-5IS"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -277,6 +322,8 @@
                             <constraint firstItem="QCF-gn-ohl" firstAttribute="leading" secondItem="Mme-YU-W8F" secondAttribute="trailing" constant="18" id="CW1-dl-zn2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PTe-VA-Nfp" secondAttribute="trailing" id="DVX-5v-go5"/>
                             <constraint firstItem="xra-I9-fn5" firstAttribute="centerX" secondItem="nh4-CX-t75" secondAttribute="centerX" constant="-4.5" id="Eto-Y0-nEe"/>
+                            <constraint firstItem="S4q-BC-lc4" firstAttribute="leading" secondItem="OxE-cX-Gnw" secondAttribute="trailing" constant="-75" id="F58-Bp-0Ew"/>
+                            <constraint firstItem="uaX-9F-C3P" firstAttribute="leading" secondItem="18e-3O-GQ3" secondAttribute="trailing" constant="-75" id="FIE-Zl-Lat"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dLh-Nm-H4M" secondAttribute="leading" id="FQ1-6k-HBJ"/>
                             <constraint firstItem="Uhn-CO-64j" firstAttribute="top" secondItem="ziV-wc-pwY" secondAttribute="bottom" constant="-1" id="FQ5-j6-WvE"/>
                             <constraint firstItem="0Cz-7o-OKb" firstAttribute="centerX" secondItem="xra-I9-fn5" secondAttribute="centerX" id="HVL-0V-Wj0"/>
@@ -305,10 +352,12 @@
                             <constraint firstItem="uGi-If-YBR" firstAttribute="leading" secondItem="ziV-wc-pwY" secondAttribute="trailing" constant="23" id="Xg0-mQ-1V3"/>
                             <constraint firstItem="Bkb-z7-OvG" firstAttribute="height" secondItem="GuJ-3D-Gkw" secondAttribute="height" id="Xk2-fa-SlJ"/>
                             <constraint firstItem="P8K-58-4KV" firstAttribute="leading" secondItem="uGi-If-YBR" secondAttribute="trailing" constant="25" id="Xpz-w7-pE5"/>
+                            <constraint firstItem="kQM-Ev-xhB" firstAttribute="leading" secondItem="L7c-xQ-7Iu" secondAttribute="trailing" constant="-75" id="XwA-KO-cAn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cJh-Ux-gBC" secondAttribute="trailing" id="Y3w-yR-v5H"/>
                             <constraint firstItem="Bkb-z7-OvG" firstAttribute="top" secondItem="dLh-Nm-H4M" secondAttribute="bottom" constant="8" id="ZSD-vl-nj0"/>
                             <constraint firstItem="PVy-fa-HhF" firstAttribute="centerX" secondItem="qpv-f3-bxM" secondAttribute="centerX" id="ahE-ZL-HgT"/>
                             <constraint firstItem="18e-3O-GQ3" firstAttribute="leading" secondItem="L7c-xQ-7Iu" secondAttribute="trailing" constant="35" id="alE-fx-hbm"/>
+                            <constraint firstItem="uaX-9F-C3P" firstAttribute="top" secondItem="18e-3O-GQ3" secondAttribute="bottom" constant="-75" id="bAm-Bp-ftd"/>
                             <constraint firstItem="OxE-cX-Gnw" firstAttribute="top" secondItem="Mme-YU-W8F" secondAttribute="bottom" constant="20" id="ca2-wU-7Wl"/>
                             <constraint firstItem="GuJ-3D-Gkw" firstAttribute="top" secondItem="vfv-LG-wv0" secondAttribute="bottom" constant="32" id="dXd-OR-H8U"/>
                             <constraint firstItem="wzE-hU-a12" firstAttribute="top" secondItem="62w-PX-M0W" secondAttribute="bottom" constant="15" id="e7r-fH-FgU"/>
@@ -326,8 +375,10 @@
                             <constraint firstItem="L7c-xQ-7Iu" firstAttribute="leading" secondItem="OxE-cX-Gnw" secondAttribute="trailing" constant="29" id="lTZ-GQ-lsY"/>
                             <constraint firstItem="dLh-Nm-H4M" firstAttribute="top" secondItem="wzE-hU-a12" secondAttribute="bottom" constant="8" id="nCG-kE-pOo"/>
                             <constraint firstItem="L7c-xQ-7Iu" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="-7.5" id="p3p-Lf-hF8"/>
+                            <constraint firstItem="kQM-Ev-xhB" firstAttribute="top" secondItem="L7c-xQ-7Iu" secondAttribute="bottom" constant="-75" id="pI6-nD-MyO"/>
                             <constraint firstItem="62w-PX-M0W" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="pam-Pz-h3z"/>
                             <constraint firstItem="GcT-K9-g8b" firstAttribute="top" secondItem="sMt-4v-xtY" secondAttribute="bottom" constant="8" symbolic="YES" id="qUs-cO-Fwz"/>
+                            <constraint firstItem="S4q-BC-lc4" firstAttribute="top" secondItem="OxE-cX-Gnw" secondAttribute="bottom" constant="-75" id="r94-a0-YSM"/>
                             <constraint firstItem="qpv-f3-bxM" firstAttribute="leading" secondItem="QCF-gn-ohl" secondAttribute="trailing" constant="18" id="rOE-VR-D0b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wzE-hU-a12" secondAttribute="trailing" id="sCa-yl-4vc"/>
                             <constraint firstItem="L7c-xQ-7Iu" firstAttribute="leading" secondItem="GuJ-3D-Gkw" secondAttribute="trailing" constant="390" id="sQc-GN-jKj"/>
@@ -372,7 +423,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="선택" id="ICR-tL-Lj7"/>
                     <connections>
+                        <outlet property="dustGaugePoint" destination="kQM-Ev-xhB" id="Ih6-Pa-z7G"/>
                         <outlet property="graphView" destination="sMt-4v-xtY" id="h2e-40-rkU"/>
+                        <outlet property="radioGaugePoint" destination="S4q-BC-lc4" id="dTm-MF-ddJ"/>
+                        <outlet property="waterGaugePoint" destination="uaX-9F-C3P" id="TbJ-0q-ELQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -468,8 +522,7 @@
     </scenes>
     <resources>
         <image name="test_icon1" width="600" height="600"/>
-        <image name="test_icon3" width="128" height="128"/>
-        <image name="test_icon4" width="512" height="512"/>
-        <image name="test_icon5" width="128" height="128"/>
+        <image name="test_icon6" width="512" height="512"/>
+        <image name="test_icon7" width="512" height="512"/>
     </resources>
 </document>

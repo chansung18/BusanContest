@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var graphView: LineChart!
+    @IBOutlet weak var radioGaugePoint: UIButton!
+    @IBOutlet weak var dustGaugePoint: UIButton!
+    @IBOutlet weak var waterGaugePoint: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +23,18 @@ class ViewController: UIViewController {
         graphView.y.grid.visible = false
         graphView.x.labels.visible = false
         graphView.y.labels.visible = false
+        graphView.x.axis.visible = false;
+        graphView.y.axis.visible = false;
         
         graphView.backgroundColor = UIColor.clearColor()
+
+        UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseIn
+            , animations: { () -> Void in
+                        self.radioGaugePoint.transform = CGAffineTransformRotate(self.radioGaugePoint.transform, 2.0)
+                        self.dustGaugePoint.transform = CGAffineTransformRotate(self.dustGaugePoint.transform, 2.5)
+                        self.waterGaugePoint.transform = CGAffineTransformRotate(self.waterGaugePoint.transform, 1.5)
+
+            }, completion: nil)
      }
     
     override func viewWillAppear(animated: Bool) {

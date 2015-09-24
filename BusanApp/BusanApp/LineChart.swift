@@ -269,7 +269,7 @@ public class LineChart: UIView {
     /**
      * Highlight data points at index.
      */
-    private func highlightDataPoints(index: Int) {
+    public func highlightDataPoints(index: Int) {
         for (lineIndex, dotsData) in dotsDataStore.enumerate() {
             // make all dots white again
             for dot in dotsData {

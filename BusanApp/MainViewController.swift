@@ -60,6 +60,11 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
+        
+        
+        let pasingtest = WeatherParser()
+        pasingtest.beginParsing("1234")
+        
 
     }
     

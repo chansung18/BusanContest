@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L6D-dn-kEy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L6D-dn-kEy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Water Quality Info-->
+        <!--Weather Info-->
         <scene sceneID="Lpc-eU-F67">
             <objects>
-                <viewController id="Sih-cH-EtJ" customClass="WaterQualityInfo" customModule="BusanApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Sih-cH-EtJ" customClass="WeatherInfo" customModule="BusanApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mZf-X4-1Cm"/>
                         <viewControllerLayoutGuide type="bottom" id="VT5-hs-4Jt"/>
@@ -592,9 +592,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="sDE-4v-SUl"/>
                                         <exclude reference="B7A-Zh-cCL"/>
                                         <exclude reference="EPX-ON-3OH"/>
+                                        <exclude reference="sDE-4v-SUl"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -616,6 +616,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZU-aN-ENq">
+                                <rect key="frame" x="217" y="553" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Sih-cH-EtJ" kind="show" id="s0p-9Z-mYL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

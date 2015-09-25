@@ -141,6 +141,20 @@ class WeatherParser: UIViewController, NSXMLParserDelegate {
         
     }
     
+    func getWeatherData() -> [WeatherData] {
+        
+        let term = dataTagReadCount/5
+        let viewData: [WeatherData] = [dataSet[0],dataSet[Int(1*term)],dataSet[Int(2*term)],dataSet[Int(3*term)],dataSet[Int(4*term)]]
+        
+        
+        
+        return viewData
+        
+        
+        
+        
+    }
+    
     
     
     

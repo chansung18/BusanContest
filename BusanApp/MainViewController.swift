@@ -19,6 +19,22 @@ class MainViewController: UIViewController {
     @IBOutlet weak var rainLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
+    
+    
+    @IBOutlet weak var timeLabel1: UILabel!
+    @IBOutlet weak var timeLabel2: UILabel!
+    @IBOutlet weak var timeLabel3: UILabel!
+    @IBOutlet weak var timeLabel4: UILabel!
+    @IBOutlet weak var timeLabel5: UILabel!
+    
+    
+    @IBOutlet weak var tempData1: UILabel!
+    @IBOutlet weak var tempData2: UILabel!
+    @IBOutlet weak var tempData3: UILabel!
+    @IBOutlet weak var tempData4: UILabel!
+    @IBOutlet weak var tempData5: UILabel!
+    
+    
 
     var rainData: [CGFloat] = [15, 13, 5, 20, 9]
     var humidityData: [CGFloat] = [30, 35, 10, 70, 80]
@@ -65,6 +81,8 @@ class MainViewController: UIViewController {
         let pasingtest = WeatherParser()
         pasingtest.beginParsing("1234")
         
+        setWeather(pasingtest.getWeatherData())
+        
 
     }
     
@@ -86,6 +104,34 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setWeather(let weatherDataFromParser: [WeatherData]){
+        
+        timeLabel1.text = ("\(weatherDataFromParser[0].hour)")
+        tempData1.text = ("\(weatherDataFromParser[0].temperature)")
+        timeLabel2.text = ("\(weatherDataFromParser[1].hour)")
+        tempData2.text = ("\(weatherDataFromParser[1].temperature)")
+        timeLabel3.text = ("\(weatherDataFromParser[2].hour)")
+        tempData3.text = ("\(weatherDataFromParser[2].temperature)")
+        timeLabel4.text = ("\(weatherDataFromParser[3].hour)")
+        tempData4.text = ("\(weatherDataFromParser[3].temperature)")
+        timeLabel5.text = ("\(weatherDataFromParser[4].hour)")
+        tempData5.text = ("\(weatherDataFromParser[4].temperature)")
+        
+        
+        for i in 0...4 {
+            
+            rainData[i] = CGFloat(weatherDataFromParser[i].rainExpectationRate)
+            humidityData[i] = CGFloat(weatherDataFromParser[i].humidityRate)
+            windSpeedData[i] = CGFloat(weatherDataFromParser[i].windSpeed)
+            
+            
+        }
+        
+        
+        
+        
+    }
 
     /*
     // MARK: - Navigation

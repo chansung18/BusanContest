@@ -346,16 +346,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il6-c9-1q7">
-                                <rect key="frame" x="329" y="86" width="76" height="47"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="L6n-Em-teC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz8-a1-SnM">
                                 <rect key="frame" x="389" y="87" width="76" height="45"/>
                                 <animations/>
@@ -616,13 +606,16 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZU-aN-ENq">
-                                <rect key="frame" x="217" y="553" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="Sih-cH-EtJ" kind="show" id="s0p-9Z-mYL"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il6-c9-1q7">
+                                <rect key="frame" x="329" y="86" width="76" height="47"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="L6n-Em-teC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -747,6 +740,16 @@
                         <outlet property="highlightView3" destination="c5G-7r-4dx" id="iwl-Fr-6xe"/>
                         <outlet property="humidityLabel" destination="fHP-TZ-sP0" id="4ds-r2-Ufj"/>
                         <outlet property="rainLabel" destination="6Qt-Q7-Lbx" id="NCB-xK-alx"/>
+                        <outlet property="tempData1" destination="PtE-Ed-iul" id="kgF-O3-lHW"/>
+                        <outlet property="tempData2" destination="vYf-Jr-t5A" id="cNP-W9-dEm"/>
+                        <outlet property="tempData3" destination="f7S-ci-xyA" id="dqb-rD-Gk5"/>
+                        <outlet property="tempData4" destination="M0F-dz-xTK" id="HfJ-2y-wSX"/>
+                        <outlet property="tempData5" destination="j2W-po-kpZ" id="cpg-aP-F72"/>
+                        <outlet property="timeLabel1" destination="7Qp-zC-nV7" id="zyE-Im-S2a"/>
+                        <outlet property="timeLabel2" destination="xWW-Jb-euu" id="RTh-1R-g2Y"/>
+                        <outlet property="timeLabel3" destination="GCm-cC-gIW" id="Rhl-j9-DX3"/>
+                        <outlet property="timeLabel4" destination="il6-c9-1q7" id="n0i-0E-HB9"/>
+                        <outlet property="timeLabel5" destination="Bz8-a1-SnM" id="gsb-lb-hMf"/>
                         <outlet property="windLabel" destination="3Or-fc-amD" id="OBW-kI-DL7"/>
                     </connections>
                 </viewController>

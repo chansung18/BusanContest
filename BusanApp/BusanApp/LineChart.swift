@@ -38,7 +38,7 @@ public class LineChart: UIView {
             var b: CGFloat = 0
             var a: CGFloat = 0
             color.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
-            return UIColor(hue: h, saturation: s, brightness: b * 1.5, alpha: a)
+            return UIColor(hue: h, saturation: s, brightness: b * 3, alpha: a)
         }
     }
     
@@ -82,10 +82,10 @@ public class LineChart: UIView {
     public struct Dots {
         public var visible: Bool = true
         public var color: UIColor = UIColor.whiteColor()
-        public var innerRadius: CGFloat = 8
-        public var outerRadius: CGFloat = 12
-        public var innerRadiusHighlighted: CGFloat = 8
-        public var outerRadiusHighlighted: CGFloat = 12
+        public var innerRadius: CGFloat = 12
+        public var outerRadius: CGFloat = 15
+        public var innerRadiusHighlighted: CGFloat = 12
+        public var outerRadiusHighlighted: CGFloat = 15
     }
     
     // default configuration
@@ -274,6 +274,10 @@ public class LineChart: UIView {
             // make all dots white again
             for dot in dotsData {
                 dot.backgroundColor = dots.color.CGColor
+//                dots.innerRadius = 8
+//                dots.outerRadius = 12
+//                dots.innerRadiusHighlighted = 8
+//                dots.innerRadiusHighlighted = 12
             }
             // highlight current data point
             var dot: DotCALayer

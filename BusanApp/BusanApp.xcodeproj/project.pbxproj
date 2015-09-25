@@ -16,12 +16,14 @@
 		1E8D5EC81BB3C543003485A9 /* air-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EC51BB3C543003485A9 /* air-back.png */; settings = {ASSET_TAGS = (); }; };
 		1E8D5EC91BB3C543003485A9 /* radiation-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EC61BB3C543003485A9 /* radiation-back.png */; settings = {ASSET_TAGS = (); }; };
 		1E8D5ECA1BB3C543003485A9 /* water-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EC71BB3C543003485A9 /* water-back.png */; settings = {ASSET_TAGS = (); }; };
-		1E8D5EE31BB40420003485A9 /* cloud22.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EDD1BB40420003485A9 /* cloud22.png */; settings = {ASSET_TAGS = (); }; };
-		1E8D5EE41BB40420003485A9 /* cloudandsun.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EDE1BB40420003485A9 /* cloudandsun.png */; settings = {ASSET_TAGS = (); }; };
-		1E8D5EE51BB40420003485A9 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EDF1BB40420003485A9 /* rain.png */; settings = {ASSET_TAGS = (); }; };
-		1E8D5EE61BB40420003485A9 /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EE01BB40420003485A9 /* snow.png */; settings = {ASSET_TAGS = (); }; };
-		1E8D5EE71BB40420003485A9 /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EE11BB40420003485A9 /* sunny.png */; settings = {ASSET_TAGS = (); }; };
-		1E8D5EE81BB40420003485A9 /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EE21BB40420003485A9 /* wind.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF01BB4BA81003485A9 /* clarweather.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EE91BB4BA81003485A9 /* clarweather.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF11BB4BA81003485A9 /* doudyweather.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EEA1BB4BA81003485A9 /* doudyweather.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF21BB4BA81003485A9 /* partlydoudyweather.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EEB1BB4BA81003485A9 /* partlydoudyweather.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF31BB4BA81003485A9 /* snowfall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EEC1BB4BA81003485A9 /* snowfall.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF41BB4BA81003485A9 /* stromweather.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EED1BB4BA81003485A9 /* stromweather.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF51BB4BA81003485A9 /* weatherheaveyrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EEE1BB4BA81003485A9 /* weatherheaveyrain.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF61BB4BA81003485A9 /* weatherrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EEF1BB4BA81003485A9 /* weatherrain.png */; settings = {ASSET_TAGS = (); }; };
+		1E8D5EF81BB4EE76003485A9 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D5EF71BB4EE76003485A9 /* RadioTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		1EA15FE31BABD9BD00786F92 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA15FE21BABD9BD00786F92 /* WeatherData.swift */; settings = {ASSET_TAGS = (); }; };
 		1EDA88231BA904E600C5E93E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA88221BA904E600C5E93E /* AppDelegate.swift */; };
 		1EDA88251BA904E600C5E93E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA88241BA904E600C5E93E /* ViewController.swift */; };
@@ -79,12 +81,14 @@
 		1E8D5EC51BB3C543003485A9 /* air-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "air-back.png"; sourceTree = "<group>"; };
 		1E8D5EC61BB3C543003485A9 /* radiation-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radiation-back.png"; sourceTree = "<group>"; };
 		1E8D5EC71BB3C543003485A9 /* water-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water-back.png"; sourceTree = "<group>"; };
-		1E8D5EDD1BB40420003485A9 /* cloud22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud22.png; sourceTree = "<group>"; };
-		1E8D5EDE1BB40420003485A9 /* cloudandsun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudandsun.png; sourceTree = "<group>"; };
-		1E8D5EDF1BB40420003485A9 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
-		1E8D5EE01BB40420003485A9 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
-		1E8D5EE11BB40420003485A9 /* sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny.png; sourceTree = "<group>"; };
-		1E8D5EE21BB40420003485A9 /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
+		1E8D5EE91BB4BA81003485A9 /* clarweather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clarweather.png; sourceTree = "<group>"; };
+		1E8D5EEA1BB4BA81003485A9 /* doudyweather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doudyweather.png; sourceTree = "<group>"; };
+		1E8D5EEB1BB4BA81003485A9 /* partlydoudyweather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partlydoudyweather.png; sourceTree = "<group>"; };
+		1E8D5EEC1BB4BA81003485A9 /* snowfall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowfall.png; sourceTree = "<group>"; };
+		1E8D5EED1BB4BA81003485A9 /* stromweather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stromweather.png; sourceTree = "<group>"; };
+		1E8D5EEE1BB4BA81003485A9 /* weatherheaveyrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weatherheaveyrain.png; sourceTree = "<group>"; };
+		1E8D5EEF1BB4BA81003485A9 /* weatherrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weatherrain.png; sourceTree = "<group>"; };
+		1E8D5EF71BB4EE76003485A9 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
 		1EA15FE21BABD9BD00786F92 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		1EDA881D1BA904E600C5E93E /* BusanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDA88211BA904E600C5E93E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		1EDA88141BA904E600C5E93E = {
 			isa = PBXGroup;
 			children = (
+				1E8D5EF71BB4EE76003485A9 /* RadioTableViewCell.swift */,
 				1EDA881F1BA904E600C5E93E /* BusanApp */,
 				1EDA881E1BA904E600C5E93E /* Products */,
 				1EDA88351BA904E600C5E93E /* BusanAppTests */,
@@ -205,14 +210,15 @@
 				1EE1B76B1BB2225100D05BDD /* test_icon7.png */,
 				1EE1B7691BB2206800D05BDD /* test_icon6.png */,
 				1E8D5EBD1BB382DF003485A9 /* humidity.png */,
-				1E8D5EDD1BB40420003485A9 /* cloud22.png */,
-				1E8D5EDE1BB40420003485A9 /* cloudandsun.png */,
-				1E8D5EDF1BB40420003485A9 /* rain.png */,
-				1E8D5EE01BB40420003485A9 /* snow.png */,
-				1E8D5EE11BB40420003485A9 /* sunny.png */,
-				1E8D5EE21BB40420003485A9 /* wind.png */,
 				1E8D5EC51BB3C543003485A9 /* air-back.png */,
 				1E8D5EC61BB3C543003485A9 /* radiation-back.png */,
+				1E8D5EE91BB4BA81003485A9 /* clarweather.png */,
+				1E8D5EEA1BB4BA81003485A9 /* doudyweather.png */,
+				1E8D5EEB1BB4BA81003485A9 /* partlydoudyweather.png */,
+				1E8D5EEC1BB4BA81003485A9 /* snowfall.png */,
+				1E8D5EED1BB4BA81003485A9 /* stromweather.png */,
+				1E8D5EEE1BB4BA81003485A9 /* weatherheaveyrain.png */,
+				1E8D5EEF1BB4BA81003485A9 /* weatherrain.png */,
 				1E8D5EBE1BB382DF003485A9 /* windspeed.png */,
 				1EE1B7221BB110C100D05BDD /* test_icon1.png */,
 				1EE1B7271BB123FC00D05BDD /* test_icon4.png */,
@@ -316,19 +322,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8D5EF61BB4BA81003485A9 /* weatherrain.png in Resources */,
 				1E8D5EAA1BB36C7C003485A9 /* water_back.png in Resources */,
 				1E8D5ECA1BB3C543003485A9 /* water-back.png in Resources */,
-				1E8D5EE51BB40420003485A9 /* rain.png in Resources */,
-				1E8D5EE41BB40420003485A9 /* cloudandsun.png in Resources */,
 				1EDA88281BA904E600C5E93E /* Main.storyboard in Resources */,
-				1E8D5EE81BB40420003485A9 /* wind.png in Resources */,
-				1E8D5EE31BB40420003485A9 /* cloud22.png in Resources */,
-				1E8D5EE61BB40420003485A9 /* snow.png in Resources */,
+				1E8D5EF41BB4BA81003485A9 /* stromweather.png in Resources */,
+				1E8D5EF51BB4BA81003485A9 /* weatherheaveyrain.png in Resources */,
 				1EDA882D1BA904E600C5E93E /* LaunchScreen.xib in Resources */,
 				1EE1B7281BB123FC00D05BDD /* test_icon4.png in Resources */,
 				1EDA882A1BA904E600C5E93E /* Images.xcassets in Resources */,
+				1E8D5EF21BB4BA81003485A9 /* partlydoudyweather.png in Resources */,
 				1EE1B76C1BB2225100D05BDD /* test_icon7.png in Resources */,
+				1E8D5EF01BB4BA81003485A9 /* clarweather.png in Resources */,
+				1E8D5EF11BB4BA81003485A9 /* doudyweather.png in Resources */,
 				1E8D5EBC1BB38201003485A9 /* umbrella.png in Resources */,
+				1E8D5EF31BB4BA81003485A9 /* snowfall.png in Resources */,
 				1E8D5EA81BB36C74003485A9 /* gauge_back.png in Resources */,
 				1EE1B7231BB110C100D05BDD /* test_icon2.png in Resources */,
 				1E8D5EC81BB3C543003485A9 /* air-back.png in Resources */,
@@ -339,7 +347,6 @@
 				1EE1B76A1BB2206800D05BDD /* test_icon6.png in Resources */,
 				1EE1B7241BB110C100D05BDD /* test_icon1.png in Resources */,
 				1E8D5EC01BB382DF003485A9 /* windspeed.png in Resources */,
-				1E8D5EE71BB40420003485A9 /* sunny.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8D5EF81BB4EE76003485A9 /* RadioTableViewCell.swift in Sources */,
 				80D3555F1BADAA2100E2A386 /* WaterQualityInfo.swift in Sources */,
 				80F413B11BAA7A050082807D /* RadioactiveRay.swift in Sources */,
 				1EDA88251BA904E600C5E93E /* ViewController.swift in Sources */,

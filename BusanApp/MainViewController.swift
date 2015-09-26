@@ -193,6 +193,19 @@ class MainViewController: UIViewController {
         else if weatherDataFromParser[0].desc == "맑음" {
             weatherImage1.image = UIImage(named: "sunshine")
         }
+        else if weatherDataFromParser[0].desc == "흐림" {
+            weatherImage1.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[0].desc == "비" {
+            weatherImage1.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[0].desc == "눈/비" {
+            weatherImage1.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[0].desc == "눈" {
+            weatherImage1.image = UIImage(named: "snow")
+        }
+        
         
         if weatherDataFromParser[1].desc == "구름 많음" {
             weatherImage2.image = UIImage(named: "cloudy")
@@ -203,6 +216,19 @@ class MainViewController: UIViewController {
         else if weatherDataFromParser[1].desc == "맑음" {
             weatherImage2.image = UIImage(named: "sunshine")
         }
+        else if weatherDataFromParser[1].desc == "흐림" {
+            weatherImage2.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[1].desc == "비" {
+            weatherImage2.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[1].desc == "눈/비" {
+            weatherImage2.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[1].desc == "눈" {
+            weatherImage2.image = UIImage(named: "snow")
+        }
+        
         
         if weatherDataFromParser[2].desc == "구름 많음" {
             weatherImage3.image = UIImage(named: "cloudy")
@@ -213,6 +239,19 @@ class MainViewController: UIViewController {
         else if weatherDataFromParser[2].desc == "맑음" {
             weatherImage3.image = UIImage(named: "sunshine")
         }
+        else if weatherDataFromParser[2].desc == "흐림" {
+            weatherImage3.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[2].desc == "비" {
+            weatherImage3.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[2].desc == "눈/비" {
+            weatherImage3.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[2].desc == "눈" {
+            weatherImage3.image = UIImage(named: "snow")
+        }
+        
         
         if weatherDataFromParser[3].desc == "구름 많음" {
             weatherImage4.image = UIImage(named: "cloudy")
@@ -223,6 +262,19 @@ class MainViewController: UIViewController {
         else if weatherDataFromParser[3].desc == "맑음" {
             weatherImage4.image = UIImage(named: "sunshine")
         }
+        else if weatherDataFromParser[3].desc == "흐림" {
+            weatherImage4.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[3].desc == "비" {
+            weatherImage4.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[3].desc == "눈/비" {
+            weatherImage4.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[3].desc == "눈" {
+            weatherImage4.image = UIImage(named: "snow")
+        }
+        
         
         if weatherDataFromParser[4].desc == "구름 많음" {
             weatherImage5.image = UIImage(named: "cloudy")
@@ -232,6 +284,18 @@ class MainViewController: UIViewController {
         }
         else if weatherDataFromParser[4].desc == "맑음" {
             weatherImage5.image = UIImage(named: "sunshine")
+        }
+        else if weatherDataFromParser[4].desc == "흐림" {
+            weatherImage5.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[4].desc == "비" {
+            weatherImage5.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[4].desc == "눈/비" {
+            weatherImage5.image = UIImage(named: "rain")
+        }
+        else if weatherDataFromParser[4].desc == "눈" {
+            weatherImage5.image = UIImage(named: "snow")
         }
         
         

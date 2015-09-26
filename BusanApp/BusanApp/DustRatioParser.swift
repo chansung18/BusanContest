@@ -140,10 +140,10 @@ class DustRatioParser: UIViewController, NSXMLParserDelegate {
     {
         element = ""
         
-        if( elementName == XMLRadiationEachElementStartingTagKey ) {
-            if let radiationData = currentRadiationData {
-                dataSet.append(radiationData)
-                print("append" + radiationData.localName)
+        if( elementName == XMLAirQualityEachElementStartingTagKey ) {
+            if let airQualtyData = currentAirQualityData {
+                dataSet.append(airQualtyData)
+                print("append" + airQualtyData.site)
             }
             
             dataTagReadCount++
@@ -154,7 +154,7 @@ class DustRatioParser: UIViewController, NSXMLParserDelegate {
     func parserDidEndDocument(parser: NSXMLParser) {
         print("All examined data count = \(dataTagReadCount)");
         
-        for data: RadiationData in dataSet {
+        for data: DustData in dataSet {
             print(data);
         }
     }

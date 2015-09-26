@@ -7,7 +7,7 @@
 //
 import Foundation
 
-class DustData: CustomStringConvertible {
+class AirQualityData: CustomStringConvertible {
     
     
     

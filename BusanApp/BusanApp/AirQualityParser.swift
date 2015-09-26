@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class DustRatioParser: UIViewController, NSXMLParserDelegate {
+class AirQualityParser: UIViewController, NSXMLParserDelegate {
     
     let XMLAirQualityEachElementStartingTagKey = "item"
     let XMLAirQualityEachElementAreaIndex = "areaIndex"
@@ -34,8 +34,8 @@ class DustRatioParser: UIViewController, NSXMLParserDelegate {
     var dataTagReadCount = 0
     
     
-    var currentAirQualityData: DustData?
-    var dataSet:[DustData] = [DustData]()
+    var currentAirQualityData: AirQualityData?
+    var dataSet:[AirQualityData] = [AirQualityData]()
     
     
     
@@ -93,7 +93,7 @@ class DustRatioParser: UIViewController, NSXMLParserDelegate {
         
         if elementName == XMLAirQualityEachElementStartingTagKey
         {
-            currentAirQualityData = DustData()
+            currentAirQualityData = AirQualityData()
         }
     }
     
@@ -154,7 +154,7 @@ class DustRatioParser: UIViewController, NSXMLParserDelegate {
     func parserDidEndDocument(parser: NSXMLParser) {
         print("All examined data count = \(dataTagReadCount)");
         
-        for data: DustData in dataSet {
+        for data: AirQualityData in dataSet {
             print(data);
         }
     }

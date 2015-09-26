@@ -37,10 +37,6 @@ class WeatherParser: UIViewController, NSXMLParserDelegate {
     var dataSet:[WeatherData] = [WeatherData]()
     
     
-    
-
-    
-    
     func beginParsing(let urlzone: String)
     {
         
@@ -65,7 +61,6 @@ class WeatherParser: UIViewController, NSXMLParserDelegate {
         
         
         parser.delegate = self
-        
         parser.parse()
         
         print("bingParsin1g\n")

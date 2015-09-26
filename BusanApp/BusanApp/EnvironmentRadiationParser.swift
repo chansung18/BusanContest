@@ -42,12 +42,9 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
         
         let getEnvironmentalRadiationPlaceListURL = "http://opendata.busan.go.kr/openapi/service/EnvironmentalRadiationInfoService/getEnvironmentalRadiationInfoDetail?"
         let serviceKey = "ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
-        var seqISDistrictNumber = 2
+        let seqISDistrictNumber = urlLocation
         
         let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(10)&seq=\(seqISDistrictNumber)&\(serviceKey)"
-        
-        
-        
         
         posts = []
         if let url = NSURL(string: urlInString) {
@@ -109,12 +106,6 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
             else if element == XMLRadiationEachElementOnehourAveTimeTagKey {
                 currentRadiationData?.oneHourAveTime = string
             }
-            
-            
-            
-            
-            
-            
     }
     
     func parser(parser: NSXMLParser,
@@ -142,11 +133,4 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
             print(data);
         }
     }
-
-    
-    
-    
-
-    
-    
 }

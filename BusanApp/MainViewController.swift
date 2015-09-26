@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var graphView: LineChart!
     
@@ -40,12 +41,19 @@ class MainViewController: UIViewController {
     @IBOutlet weak var weatherImage4: UIImageView!
     @IBOutlet weak var weatherImage5: UIImageView!
     
+    @IBOutlet weak var provinceLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
 
     var rainData: [CGFloat] = [15, 13, 5, 20, 9]
     var humidityData: [CGFloat] = [30, 35, 10, 70, 80]
     var windSpeedData: [CGFloat] = [10, 2, 20, 21, 30]
     
     var index = 0
+    
+    let locationManager = CLLocationManager()
+    let currentLocationParser = CurrentLocationParser()
+    
+    var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,16 +84,60 @@ class MainViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.startUpdatingLocation()
+//            locationManager.startMonitoringSignificantLocationChanges()
+            print("location manager starting update location")
+        }
         
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
         
         let pasingtest = WeatherParser()
         pasingtest.beginParsing("1234")
         
         setWeather(pasingtest.getWeatherData())
-        
-
     }
+    
+    //location manager delegate
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("location update occurred : size of locations : \(locations.count)")
+
+        if locations.count > 0 {
+            if currentLocation.latitude != locations[0].coordinate.latitude ||
+                currentLocation.longitude != locations[0].coordinate.longitude {
+                    currentLocation = locations[0].coordinate
+                    
+                    print("latitude = \(currentLocation.latitude)")
+                    print("longitude = \(currentLocation.longitude)")
+                    
+                    if let locationData = currentLocationParser.getLocationFrom(locations[0].coordinate.latitude, longitude
+                        : locations[0].coordinate.longitude) {
+                        provinceLabel.text = locationData.provinceName
+                        cityLabel.text = "(\(locationData.cityName))"
+                    }
+                    else {
+                        //default location data must be filled up.
+                        provinceLabel.text = "부산광역시"
+                        cityLabel.text = "(서면)"
+                    }
+                    
+                    
+            }
+        }
+    }
+    
+//    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+//        print("location update to new ... occurred : size of locations")
+//        
+//        print("old location's latitude:\(oldLocation.coordinate.latitude), longitude:\(oldLocation.coordinate.longitude)")
+//        print("new location's latitude:\(newLocation.coordinate.latitude), longitude:\(newLocation.coordinate.longitude)")
+//    }
+    
+    //
     
     func dataUpdate() {
         graphView.highlightDataPoints(index)

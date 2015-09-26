@@ -34,6 +34,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tempData4: UILabel!
     @IBOutlet weak var tempData5: UILabel!
     
+    @IBOutlet weak var weatherImage1: UIImageView!
+    @IBOutlet weak var weatherImage2: UIImageView!
+    @IBOutlet weak var weatherImage3: UIImageView!
+    @IBOutlet weak var weatherImage4: UIImageView!
+    @IBOutlet weak var weatherImage5: UIImageView!
     
 
     var rainData: [CGFloat] = [15, 13, 5, 20, 9]
@@ -59,10 +64,6 @@ class MainViewController: UIViewController {
         highlightView3.layer.cornerRadius = highlightView3.frame.size.width/4.5
         
         highlightView1.clipsToBounds = true
-        
-        graphView.addLine(rainData)
-        graphView.addLine(humidityData)
-        graphView.addLine(windSpeedData)
         
         graphView.x.grid.visible = false
         graphView.y.grid.visible = false
@@ -107,29 +108,143 @@ class MainViewController: UIViewController {
     
     func setWeather(let weatherDataFromParser: [WeatherData]){
         
-        timeLabel1.text = ("\(weatherDataFromParser[0].hour)")
-        tempData1.text = ("\(weatherDataFromParser[0].temperature)")
-        timeLabel2.text = ("\(weatherDataFromParser[1].hour)")
-        tempData2.text = ("\(weatherDataFromParser[1].temperature)")
-        timeLabel3.text = ("\(weatherDataFromParser[2].hour)")
-        tempData3.text = ("\(weatherDataFromParser[2].temperature)")
-        timeLabel4.text = ("\(weatherDataFromParser[3].hour)")
-        tempData4.text = ("\(weatherDataFromParser[3].temperature)")
-        timeLabel5.text = ("\(weatherDataFromParser[4].hour)")
-        tempData5.text = ("\(weatherDataFromParser[4].temperature)")
+        var isFirstHourPm = false
         
+        timeLabel1.text = NSString(format: "%02d", weatherDataFromParser[0].hour) as String
+        tempData1.text = ("\(weatherDataFromParser[0].temperature)°C")
         
-        for i in 0...4 {
-            
-            rainData[i] = CGFloat(weatherDataFromParser[i].rainExpectationRate)
-            humidityData[i] = CGFloat(weatherDataFromParser[i].humidityRate)
-            windSpeedData[i] = CGFloat(weatherDataFromParser[i].windSpeed)
-            
-            
+        if weatherDataFromParser[0].hour > 12  {
+            timeLabel1.text?.appendContentsOf("pm")
+            isFirstHourPm = true
+        } else {
+            timeLabel1.text?.appendContentsOf("am")
+        }
+        
+        timeLabel2.text = NSString(format: "%02d", weatherDataFromParser[1].hour) as String
+        tempData2.text = ("\(weatherDataFromParser[1].temperature)°C")
+        
+        if isFirstHourPm {
+            if weatherDataFromParser[1].hour > 0 {
+                timeLabel2.text?.appendContentsOf("am")
+                isFirstHourPm = false
+            }
+        }
+        else {
+            if weatherDataFromParser[1].hour > 12 {
+                timeLabel2.text?.appendContentsOf("pm")
+                isFirstHourPm = true
+            }
+        }
+        
+        timeLabel3.text = NSString(format: "%02d", weatherDataFromParser[2].hour) as String
+        tempData3.text = ("\(weatherDataFromParser[2].temperature)°C")
+        
+        if isFirstHourPm {
+            if weatherDataFromParser[2].hour > 0 {
+                timeLabel3.text?.appendContentsOf("am")
+                isFirstHourPm = false
+            }
+        }
+        else {
+            if weatherDataFromParser[2].hour > 12 {
+                timeLabel3.text?.appendContentsOf("pm")
+                isFirstHourPm = true
+            }
+        }
+        
+        timeLabel4.text = NSString(format: "%02d", weatherDataFromParser[3].hour) as String
+        tempData4.text = ("\(weatherDataFromParser[3].temperature)°C")
+        
+        if isFirstHourPm {
+            if weatherDataFromParser[3].hour > 0 {
+                timeLabel4.text?.appendContentsOf("am")
+                isFirstHourPm = false
+            }
+        }
+        else {
+            if weatherDataFromParser[3].hour > 12 {
+                timeLabel4.text?.appendContentsOf("pm")
+                isFirstHourPm = true
+            }
+        }
+        
+        timeLabel5.text = NSString(format: "%02d", weatherDataFromParser[4].hour) as String
+        tempData5.text = ("\(weatherDataFromParser[4].temperature)°C")
+        
+        if isFirstHourPm {
+            if weatherDataFromParser[4].hour > 0 {
+                timeLabel5.text?.appendContentsOf("am")
+                isFirstHourPm = false
+            }
+        }
+        else {
+            if weatherDataFromParser[4].hour > 12 {
+                timeLabel5.text?.appendContentsOf("pm")
+                isFirstHourPm = true
+            }
+        }
+        
+        if weatherDataFromParser[0].desc == "구름 많음" {
+            weatherImage1.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[0].desc == "구름 조금" {
+            weatherImage1.image = UIImage(named: "little-cloudy")
+        }
+        else if weatherDataFromParser[0].desc == "맑음" {
+            weatherImage1.image = UIImage(named: "sunshine")
+        }
+        
+        if weatherDataFromParser[1].desc == "구름 많음" {
+            weatherImage2.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[1].desc == "구름 조금" {
+            weatherImage2.image = UIImage(named: "little-cloudy")
+        }
+        else if weatherDataFromParser[1].desc == "맑음" {
+            weatherImage2.image = UIImage(named: "sunshine")
+        }
+        
+        if weatherDataFromParser[2].desc == "구름 많음" {
+            weatherImage3.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[2].desc == "구름 조금" {
+            weatherImage3.image = UIImage(named: "little-cloudy")
+        }
+        else if weatherDataFromParser[2].desc == "맑음" {
+            weatherImage3.image = UIImage(named: "sunshine")
+        }
+        
+        if weatherDataFromParser[3].desc == "구름 많음" {
+            weatherImage4.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[3].desc == "구름 조금" {
+            weatherImage4.image = UIImage(named: "little-cloudy")
+        }
+        else if weatherDataFromParser[3].desc == "맑음" {
+            weatherImage4.image = UIImage(named: "sunshine")
+        }
+        
+        if weatherDataFromParser[4].desc == "구름 많음" {
+            weatherImage5.image = UIImage(named: "cloudy")
+        }
+        else if weatherDataFromParser[4].desc == "구름 조금" {
+            weatherImage5.image = UIImage(named: "little-cloudy")
+        }
+        else if weatherDataFromParser[4].desc == "맑음" {
+            weatherImage5.image = UIImage(named: "sunshine")
         }
         
         
         
+        for i in 0...4 {
+            rainData[i] = CGFloat(weatherDataFromParser[i].rainExpectationRate)
+            humidityData[i] = CGFloat(weatherDataFromParser[i].humidityRate)
+            windSpeedData[i] = CGFloat(weatherDataFromParser[i].windSpeed)
+        }
+        
+        graphView.addLine(humidityData)
+        graphView.addLine(rainData)
+        graphView.addLine(windSpeedData)
         
     }
 

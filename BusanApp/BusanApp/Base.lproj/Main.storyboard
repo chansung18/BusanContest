@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L6D-dn-kEy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L6D-dn-kEy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -750,6 +750,11 @@
                         <outlet property="timeLabel3" destination="GCm-cC-gIW" id="Rhl-j9-DX3"/>
                         <outlet property="timeLabel4" destination="il6-c9-1q7" id="n0i-0E-HB9"/>
                         <outlet property="timeLabel5" destination="Bz8-a1-SnM" id="gsb-lb-hMf"/>
+                        <outlet property="weatherImage1" destination="wla-WF-oJP" id="rJ7-Si-Nx8"/>
+                        <outlet property="weatherImage2" destination="Bis-hG-Enu" id="f1u-EK-hbb"/>
+                        <outlet property="weatherImage3" destination="iCT-Oj-vyJ" id="wEG-cD-erX"/>
+                        <outlet property="weatherImage4" destination="YaB-6W-N58" id="pmU-iJ-kA4"/>
+                        <outlet property="weatherImage5" destination="G2V-id-yzh" id="HJl-IS-Jmw"/>
                         <outlet property="windLabel" destination="3Or-fc-amD" id="OBW-kI-DL7"/>
                     </connections>
                 </viewController>

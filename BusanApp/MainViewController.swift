@@ -49,7 +49,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     var windSpeedData: [CGFloat] = [10, 2, 20, 21, 30]
     
     var index = 0
-    
+    let pasingtest = WeatherParser()
     let locationManager = CLLocationManager()
     let currentLocationParser = CurrentLocationParser()
     
@@ -86,6 +86,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -95,11 +96,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
-        
-        let pasingtest = WeatherParser()
+       
         pasingtest.beginParsing(59,urlY: 129)
         
         setWeather(pasingtest.getWeatherData())
+        
+       
     }
     
     //location manager delegate
@@ -121,13 +123,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                             
                             let getXYFromEarthPoint = AlterationLongitudeLatitude().altbegin(currentLocation.longitude, latitude: currentLocation.latitude)
                             print("x -> \(getXYFromEarthPoint.x) y -> \(getXYFromEarthPoint.y)")
-                            //let pasingtest = WeatherParser()
-                           // pasingtest.beginParsing(getXYFromEarthPoint.x,urlY: getXYFromEarthPoint.y)
-
-                          //  setWeather(pasingtest.getWeatherData())
-                            
-
-
                             
                     }
                     else {

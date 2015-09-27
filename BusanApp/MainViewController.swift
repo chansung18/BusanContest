@@ -97,7 +97,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
         
         let pasingtest = WeatherParser()
-        pasingtest.beginParsing("1234")
+        pasingtest.beginParsing(59,urlY: 129)
         
         setWeather(pasingtest.getWeatherData())
     }
@@ -118,6 +118,17 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                         : locations[0].coordinate.longitude) {
                         provinceLabel.text = locationData.provinceName
                         cityLabel.text = "(\(locationData.cityName))"
+                            
+                            let getXYFromEarthPoint = AlterationLongitudeLatitude().altbegin(currentLocation.longitude, latitude: currentLocation.latitude)
+                            print("x -> \(getXYFromEarthPoint.x) y -> \(getXYFromEarthPoint.y)")
+                            //let pasingtest = WeatherParser()
+                           // pasingtest.beginParsing(getXYFromEarthPoint.x,urlY: getXYFromEarthPoint.y)
+
+                          //  setWeather(pasingtest.getWeatherData())
+                            
+
+
+                            
                     }
                     else {
                         //default location data must be filled up.

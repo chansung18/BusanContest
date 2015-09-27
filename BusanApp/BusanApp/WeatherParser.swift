@@ -37,16 +37,13 @@ class WeatherParser: UIViewController, NSXMLParserDelegate {
     var dataSet:[WeatherData] = [WeatherData]()
     
     
-    func beginParsing(let urlzone: String)
+    func beginParsing(let urlX: Int, let urlY: Int)
     {
         
         dataTagReadCount = 0
         
-        let urlOfWatherKMA = "http://www.kma.go.kr/wid/queryDFSRSS.jsp?"
-        
-        //let zone = urlzone
-        let zone = "4825054000"
-        let urlInString = "\(urlOfWatherKMA)zone=\(zone)"
+        let urlOfWatherKMA = "http://www.kma.go.kr/wid/queryDFS.jsp?"
+        let urlInString = "\(urlOfWatherKMA)gridx=\(urlX)&gridy=\(urlY)"
         
 
         

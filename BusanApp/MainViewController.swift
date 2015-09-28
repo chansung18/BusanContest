@@ -50,6 +50,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var index = 0
     let pasingtest = WeatherParser()
+    let radioLocationParser = EnvironmentRadiationParsingLocationInfo()
     let radioParsing = EnvironmentRadiationParser()
     let locationManager = CLLocationManager()
     let currentLocationParser = CurrentLocationParser()
@@ -92,7 +93,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
             locationManager.startUpdatingLocation()
 //            locationManager.startMonitoringSignificantLocationChanges()
             print("location manager starting update location")
@@ -131,8 +132,29 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                          timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)   
                         }
                             
+                        radioLocationParser.beginParsing(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+                            
+                        for distance in radioLocationParser.getDistanceSet() {
+                            let seqNumber = distance.0
+                            radioParsing.beginParsing(seqNumber)
+                            
+                            if radioParsing.dataSet.count > 0 {
+                                break
+                            }
+                        }
+                            
+                        print("size of radio parsing data = \(radioParsing.dataSet.count)")
+                            
+                        var radioDataSetSum = 0.0
+                            
+                        for radiationData in radioParsing.dataSet {
+                            radioDataSetSum += radiationData.currentData
+                        }
+                            
+                        print("average data out of 20 items : \(radioDataSetSum/Double(radioParsing.dataSet.count))")
+                        
                         //radioParsing.beginParsing(currentLocation.longitude,latitude: currentLocation.latitude)
-                        radioParsing.beginParsing(35.0998969, latitude: 129.03009210000005)
+//                        radioParsing.beginParsing(35.0998969, latitude: 129.03009210000005)
                             
                            // setRadioData()
                     }

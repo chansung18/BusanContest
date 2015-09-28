@@ -11,6 +11,8 @@ import UIKit
 class RadioPageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     var areaFullName = ""
+    var averageRadiationDataBefore = Double()
+    var averageRadiationDataCurrent = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()

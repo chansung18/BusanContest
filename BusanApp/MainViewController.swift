@@ -41,6 +41,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherImage4: UIImageView!
     @IBOutlet weak var weatherImage5: UIImageView!
     
+    @IBOutlet weak var radioGaugePointer: UIButton!
+    @IBOutlet weak var airGaugePointer: UIButton!
+    @IBOutlet weak var waterGaugePointer: UIButton!
+    
     @IBOutlet weak var provinceLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
 
@@ -62,9 +66,27 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var timer: NSTimer?
     
+    var averageRadiationDataCurrent = Double()
+    var averageRadiationDataBefore = Double()
+    
+    func degreesToRadians(angle: Double) -> CGFloat {
+        return CGFloat((angle / 180.0 * M_PI))
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+        locationManager.startUpdatingLocation()
+        
+        //radiation
+        //0 = -145
+        //10 = 145
+        //29 * 0.11
+        //145 - (29 * 0.11)
+//     
+//        UIView.animateWithDuration(0.5) { () -> Void in
+//            self.radioGaugePointer.transform = CGAffineTransformMakeRotation(self.degreesToRadians(180))
+//        }
     }
     
     override func viewDidLoad() {
@@ -153,13 +175,23 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                         print("size of radio parsing data = \(radioParsing.dataSet.count)")
                             
                         var radioDataSetSum = 0.0
+                        var radioDataSetSumBefore = 0.0
                             
                         for radiationData in radioParsing.dataSet {
                             radioDataSetSum += radiationData.currentData
+                            radioDataSetSumBefore += radiationData.oneHourAveData
                         }
                             
                         print("average data out of 20 items : \(radioDataSetSum/Double(radioParsing.dataSet.count))")
                             
+                        averageRadiationDataCurrent = radioDataSetSum/Double(radioParsing.dataSet.count)
+                        averageRadiationDataBefore = radioDataSetSumBefore/Double(radioParsing.dataSet.count)
+                        
+//                        145 - (29 * dataValue)
+                        let radioDataAve = radioDataSetSum/Double(radioParsing.dataSet.count)
+                        UIView.animateWithDuration(2, animations: { () -> Void in
+                            self.radioGaugePointer.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / CGFloat((145 - (29 * radioDataAve))))
+                        })
                             
                         airQualityCompareDistance.beginCompareLocations(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
                             
@@ -168,26 +200,19 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                             airQualityParsing.beginParsing(zoneNumber)
                             
                                 
-                            if radioParsing.dataSet.count > 0 {
+                            if airQualityParsing.dataSet.count > 0 {
                                 print("setNuber----->\(zoneNumber)")
                                 break
                             }
                         }
                             
-                        
-                        
-                        //radioParsing.beginParsing(currentLocation.longitude,latitude: currentLocation.latitude)
-//                        radioParsing.beginParsing(35.0998969, latitude: 129.03009210000005)
-                            
-                           // setRadioData()
+                        locationManager.stopUpdatingLocation()
                     }
                     else {
                         //default location data must be filled up.
                         provinceLabel.text = "부산광역시"
                         cityLabel.text = "(서면)"
                     }
-                    
-                    
             }
         }
     }
@@ -430,6 +455,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "RadioSegue" {
             if let destinationViewController = segue.destinationViewController as? RadioPageViewController {
                 destinationViewController.areaFullName = "\(provinceLabel.text!) \(cityLabel.text!)"
+                destinationViewController.averageRadiationDataCurrent = averageRadiationDataCurrent
+                destinationViewController.averageRadiationDataBefore = averageRadiationDataBefore
             }
         }
     }

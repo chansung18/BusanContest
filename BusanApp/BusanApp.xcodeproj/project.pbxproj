@@ -58,6 +58,7 @@
 		806A09EB1BAD50F200CC6D98 /* RadiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09EA1BAD50F200CC6D98 /* RadiationData.swift */; settings = {ASSET_TAGS = (); }; };
 		806A09F11BAD903F00CC6D98 /* WaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A09F01BAD903F00CC6D98 /* WaterData.swift */; settings = {ASSET_TAGS = (); }; };
 		807AC4C41BB860B00096D4E1 /* AlterationLongitudeLatitude .swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4C31BB860B00096D4E1 /* AlterationLongitudeLatitude .swift */; settings = {ASSET_TAGS = (); }; };
+		807AC4C81BB92BD30096D4E1 /* GroundLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4C71BB92BD30096D4E1 /* GroundLocationData.swift */; settings = {ASSET_TAGS = (); }; };
 		80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C571ED1BAC07EC00024E2F /* DustRaito.swift */; settings = {ASSET_TAGS = (); }; };
 		80D06BB01BB552A900A70294 /* WeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D06BAF1BB552A900A70294 /* WeatherParser.swift */; settings = {ASSET_TAGS = (); }; };
 		80D06BB21BB5607400A70294 /* EnvironmentRadiationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D06BB11BB5607400A70294 /* EnvironmentRadiationParser.swift */; settings = {ASSET_TAGS = (); }; };
@@ -146,6 +147,7 @@
 		806A09EA1BAD50F200CC6D98 /* RadiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiationData.swift; sourceTree = "<group>"; };
 		806A09F01BAD903F00CC6D98 /* WaterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterData.swift; sourceTree = "<group>"; };
 		807AC4C31BB860B00096D4E1 /* AlterationLongitudeLatitude .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlterationLongitudeLatitude .swift"; sourceTree = "<group>"; };
+		807AC4C71BB92BD30096D4E1 /* GroundLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroundLocationData.swift; sourceTree = "<group>"; };
 		80C571ED1BAC07EC00024E2F /* DustRaito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DustRaito.swift; sourceTree = "<group>"; };
 		80D06BAF1BB552A900A70294 /* WeatherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherParser.swift; sourceTree = "<group>"; };
 		80D06BB11BB5607400A70294 /* EnvironmentRadiationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentRadiationParser.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				1EDA882B1BA904E600C5E93E /* LaunchScreen.xib */,
 				1EDA88201BA904E600C5E93E /* Supporting Files */,
 				1EE1B72D1BB14D0400D05BDD /* GraphView.swift */,
+				807AC4C71BB92BD30096D4E1 /* GroundLocationData.swift */,
 				334992C11BB69CD7008D290F /* RadioViewController.swift */,
 				334992C71BB6CD85008D290F /* CurrentLocationParser.swift */,
 				334992C91BB6DDCD008D290F /* LocationData.swift */,
@@ -451,6 +454,7 @@
 				1EDA88231BA904E600C5E93E /* AppDelegate.swift in Sources */,
 				334992CA1BB6DDCD008D290F /* LocationData.swift in Sources */,
 				806A09E91BAD489500CC6D98 /* EnvironmentRadiationInfo.swift in Sources */,
+				807AC4C81BB92BD30096D4E1 /* GroundLocationData.swift in Sources */,
 				334992C81BB6CD85008D290F /* CurrentLocationParser.swift in Sources */,
 				3327DF411BB911EA0079AB52 /* RadioPageViewController.swift in Sources */,
 			);

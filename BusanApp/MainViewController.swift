@@ -95,13 +95,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             print("location manager starting update location")
         }
         
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
-       
-        pasingtest.beginParsing(59,urlY: 129)
-        
-        setWeather(pasingtest.getWeatherData())
-        
-       
+        graphView.addLine(humidityData)
+        graphView.addLine(rainData)
+        graphView.addLine(windSpeedData)
     }
     
     //location manager delegate
@@ -121,9 +117,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                         provinceLabel.text = locationData.provinceName
                         cityLabel.text = "(\(locationData.cityName))"
                             
-                            let getXYFromEarthPoint = AlterationLongitudeLatitude().altbegin(currentLocation.longitude, latitude: currentLocation.latitude)
+                        let getXYFromEarthPoint = AlterationLongitudeLatitude().altbegin(currentLocation.longitude, latitude: currentLocation.latitude)
                             print("x -> \(getXYFromEarthPoint.x) y -> \(getXYFromEarthPoint.y)")
                             
+                        pasingtest.beginParsing(getXYFromEarthPoint.x,urlY: getXYFromEarthPoint.y)
+                        
+                        setWeather(pasingtest.getWeatherData())
                     }
                     else {
                         //default location data must be filled up.
@@ -364,10 +363,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             windSpeedData[i] = CGFloat(weatherDataFromParser[i].windSpeed)
         }
         
-        graphView.addLine(humidityData)
-        graphView.addLine(rainData)
-        graphView.addLine(windSpeedData)
-        
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
     }
 
     /*

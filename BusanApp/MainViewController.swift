@@ -136,9 +136,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                             
                         for distance in radioLocationParser.getDistanceSet() {
                             let seqNumber = distance.0
-                            radioParsing.beginParsing(seqNumber)
+                            
+                             if (seqNumber != 6)&&(seqNumber != 15)&&(seqNumber != 19)&&(seqNumber != 17)&&(seqNumber < 21){
+                                radioParsing.beginParsing(seqNumber)
+                            }
                             
                             if radioParsing.dataSet.count > 0 {
+                                print("setNuber----->\(seqNumber)")
                                 break
                             }
                         }

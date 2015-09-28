@@ -28,6 +28,8 @@ class EnvironmentRadiationParsingLocationInfo: UIViewController, NSXMLParserDele
     
     var currentRadiationData: EnvironmentRadiationLocationData?
     var dataSet:[EnvironmentRadiationLocationData] = [EnvironmentRadiationLocationData]()
+    var trash: [EnvironmentRadiationLocationData] = [EnvironmentRadiationLocationData]()
+
     
     var inputLocation: CLLocationCoordinate2D?
     var selectedSeqNumber = Int()
@@ -38,7 +40,9 @@ class EnvironmentRadiationParsingLocationInfo: UIViewController, NSXMLParserDele
     
     var distanceSet:[(Int,Double)] = [(Int,Double)]()
     
+    
     func getSeq() -> Int {
+        print("selected Number->>\(selectedSeqNumber)")
         return selectedSeqNumber // 인자값과 경도 위도 비교후 체고가까운곳 seq제공
     }
     
@@ -147,25 +151,32 @@ class EnvironmentRadiationParsingLocationInfo: UIViewController, NSXMLParserDele
         
         if( elementName == XMLRadiationEachElementStartingTagKey ) {
             if let radiationLocationData = currentRadiationData {
-                dataSet.append(radiationLocationData)
                 
-                let tmpInputLocation = CLLocation(latitude: inputLocation!.latitude, longitude: inputLocation!.longitude)
-                let tmpSelectedLocation = CLLocation(latitude: selectedLocation!.latitude, longitude: selectedLocation!.longitude)
-                
-                if tmpInputLocation.distanceFromLocation(tmpSelectedLocation) < selectedDistance {
-                    selectedDistance = tmpInputLocation.distanceFromLocation(tmpSelectedLocation)
-                    selectedSeqNumber = radiationLocationData.seq
+                if(radiationLocationData.seq > 20 || radiationLocationData.seq == 15 || radiationLocationData.seq == 17 || radiationLocationData.seq == 19 || radiationLocationData.seq == 6){
+                    trash.append(radiationLocationData)
+                    
                 }
+                else{
+                    dataSet.append(radiationLocationData)
+                    
+                    let tmpInputLocation = CLLocation(latitude: inputLocation!.latitude, longitude: inputLocation!.longitude)
+                    let tmpSelectedLocation = CLLocation(latitude: selectedLocation!.latitude, longitude: selectedLocation!.longitude)
                 
-                distanceSet.append((radiationLocationData.seq, tmpInputLocation.distanceFromLocation(tmpSelectedLocation)))
+                    if tmpInputLocation.distanceFromLocation(tmpSelectedLocation) < selectedDistance {
+                        selectedDistance = tmpInputLocation.distanceFromLocation(tmpSelectedLocation)
+                        selectedSeqNumber = radiationLocationData.seq
                 
-                print("append" + radiationLocationData.locationName)
+              
+                        distanceSet.append((radiationLocationData.seq, tmpInputLocation.distanceFromLocation(tmpSelectedLocation)))
+                        print("append    :  " + radiationLocationData.locationName)
+                        dataTagReadCount++
+                    }
+                }
             }
-            
-            dataTagReadCount++
         }
-        
     }
+    
+     
     
     func parserDidEndDocument(parser: NSXMLParser) {
         print("All examined data count = \(dataTagReadCount)");

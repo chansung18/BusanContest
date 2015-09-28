@@ -51,7 +51,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     var index = 0
     let pasingtest = WeatherParser()
     let radioLocationParser = EnvironmentRadiationParsingLocationInfo()
+    let airQualityCompareDistance = AirQualityDistanceInfo()
+    
     let radioParsing = EnvironmentRadiationParser()
+    let airQualityParsing = AirQualityParser()
     let locationManager = CLLocationManager()
     let currentLocationParser = CurrentLocationParser()
     
@@ -156,6 +159,22 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                         }
                             
                         print("average data out of 20 items : \(radioDataSetSum/Double(radioParsing.dataSet.count))")
+                            
+                            
+                        airQualityCompareDistance.beginCompareLocations(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+                            
+                        for distance in radioLocationParser.getDistanceSet() {
+                            let zoneNumber = distance.0
+                            airQualityParsing.beginParsing(zoneNumber)
+                            
+                                
+                            if radioParsing.dataSet.count > 0 {
+                                print("setNuber----->\(zoneNumber)")
+                                break
+                            }
+                        }
+                            
+                        
                         
                         //radioParsing.beginParsing(currentLocation.longitude,latitude: currentLocation.latitude)
 //                        radioParsing.beginParsing(35.0998969, latitude: 129.03009210000005)

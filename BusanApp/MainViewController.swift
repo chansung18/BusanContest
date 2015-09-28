@@ -56,6 +56,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     let pasingtest = WeatherParser()
     let radioLocationParser = EnvironmentRadiationParsingLocationInfo()
     let airQualityCompareDistance = AirQualityDistanceInfo()
+    let waterQualityParser = WaterParser()
+    
     
     let radioParsing = EnvironmentRadiationParser()
     let airQualityParsing = AirQualityParser()
@@ -205,7 +207,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                                 break
                             }
                         }
-                            
+                        
+                        print("지역이름  :\(locationData.fullName)")
+                        waterQualityParser.beginParsing("남구")
+                        
                         locationManager.stopUpdatingLocation()
                     }
                     else {

@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-
-class EnvironmentRadiationParsingLocationInfo: NSXMLParserDelegate  {
+class EnvironmentRadiationParsingLocationInfo: UIViewController, NSXMLParserDelegate  {
     
     
     
@@ -27,23 +27,20 @@ class EnvironmentRadiationParsingLocationInfo: NSXMLParserDelegate  {
     
     var isDataTagBeingExamined = false
     var dataTagReadCount = 0
-    
+    var longitude = 0.0
+    var latitude = 0.0
     
     var currentRadiationData: EnvironmentRadiationLocationData?
     var dataSet:[EnvironmentRadiationLocationData] = [EnvironmentRadiationLocationData]()
     
-    init(let longitude: Double, let latitude: Double){
-        
-        
-        
-    }
     func getSeq() -> Int{
         return 1 // 인자값과 경도 위도 비교후 체고가까운곳 seq제공
     }
-    func beginParsing(let longitude: Double, let latitude: Double)
+    func beginParsing(let latitude: Double, let longitude: Double)
     {
         
-        
+        self.longitude = longitude
+        self.latitude = latitude
         dataTagReadCount = 0
         
         

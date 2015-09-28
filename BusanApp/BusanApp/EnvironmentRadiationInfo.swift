@@ -24,7 +24,7 @@ class EnvironmetRadiationInfo: UIViewController, NSXMLParserDelegate{
         print("ViewDidLoda\n")
         
         let testingParser = EnvironmentRadiationParser()
-        testingParser.beginParsing(2)
+        testingParser.beginParsing(129.075671, latitude: 35.221561)
     
         
         

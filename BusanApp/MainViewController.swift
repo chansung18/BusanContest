@@ -131,8 +131,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                          timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)   
                         }
                             
-                        radioParsing.beginParsing(<#T##urlLocation: Int##Int#>)
-//                        setRadioData()
+                        //radioParsing.beginParsing(currentLocation.longitude,latitude: currentLocation.latitude)
+                        radioParsing.beginParsing(35.0998969, latitude: 129.03009210000005)
+                            
+                           // setRadioData()
                     }
                     else {
                         //default location data must be filled up.

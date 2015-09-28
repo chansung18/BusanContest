@@ -1,24 +1,23 @@
 //
-//  EnvironmentRadiationParser.swift
+//  EnvironmentRadiationParsingLocationInfo.swift
 //  BusanApp
 //
-//  Created by Eunkyo, Seo on 9/25/15.
+//  Created by Eunkyo, Seo on 9/28/15.
 //  Copyright © 2015 Eunkyo. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
+
+class EnvironmentRadiationParsingLocationInfo: NSXMLParserDelegate  {
     
     
     
     let XMLRadiationEachElementStartingTagKey = "item"
-    let XMLRadiationEachElementCheckTimeTagKey = "checkTime"
-    let XMLRadiationEachElementCurrentDataTagKey = "data"
-    let XMLRadiationEachElementLocalNameTagKey = "name"
-    let XMLRadiationEachElementOneHourAveDataTagKey = "oneHourAveData"
-    let XMLRadiationEachElementOnehourAveTimeTagKey = "oneHourAveTime"
+    let XMLRadiationEachElementLatitude = "lat"
+    let XMLRadiationEachElementlongitude = "lng"
+    let XMLRadiationEachElementLocalName = "locNm"
+    let XMLRadiationEachElementseq = "seq"
     
     
     
@@ -29,26 +28,30 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
     var isDataTagBeingExamined = false
     var dataTagReadCount = 0
     
-
     
+    var currentRadiationData: EnvironmentRadiationLocationData?
+    var dataSet:[EnvironmentRadiationLocationData] = [EnvironmentRadiationLocationData]()
     
-    
-    var currentRadiationData: RadiationData?
-    var dataSet:[RadiationData] = [RadiationData]()
-    
-    
+    init(let longitude: Double, let latitude: Double){
+        
+        
+        
+    }
+    func getSeq() -> Int{
+        return 1 // 인자값과 경도 위도 비교후 체고가까운곳 seq제공
+    }
     func beginParsing(let longitude: Double, let latitude: Double)
     {
-
+        
         
         dataTagReadCount = 0
         
         
-        let getEnvironmentalRadiationPlaceListURL = "http://opendata.busan.go.kr/openapi/service/EnvironmentalRadiationInfoService/getEnvironmentalRadiationInfoDetail?"
+        let getEnvironmentalRadiationPlaceListURL = "http://opendata.busan.go.kr/openapi/service/EnvironmentalRadiationInfoService/getEnvironmentalRadiationPlaceList?"
         let serviceKey = "ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
-        let seqISDistrictNumber = 2
+
         
-        let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(10)&seq=\(seqISDistrictNumber)&\(serviceKey)"
+        let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(31)&\(serviceKey)"
         
         posts = []
         if let url = NSURL(string: urlInString) {
@@ -59,11 +62,9 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
         }
         
         parser.delegate = self
-        
         parser.parse()
         
     }
-    
     
     
     func parserDidStartDocument(parser: NSXMLParser) {
@@ -89,26 +90,23 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
         
         if elementName == XMLRadiationEachElementStartingTagKey
         {
-            currentRadiationData = RadiationData()
+            currentRadiationData = EnvironmentRadiationLocationData()
         }
     }
     
     func parser(parser: NSXMLParser,
         foundCharacters string: String) {
-            if element == XMLRadiationEachElementCheckTimeTagKey {
-                currentRadiationData?.checkTime = string
+            if element == XMLRadiationEachElementlongitude {
+                currentRadiationData?.longitude = (NSNumberFormatter().numberFromString(string)?.doubleValue)!
             }
-            else if element == XMLRadiationEachElementCurrentDataTagKey {
-                currentRadiationData?.currentData = (NSNumberFormatter().numberFromString(string)?.doubleValue)!
+            else if element == XMLRadiationEachElementLatitude{
+                currentRadiationData?.latitude = (NSNumberFormatter().numberFromString(string)?.doubleValue)!
             }
-            else if element == XMLRadiationEachElementLocalNameTagKey {
-                currentRadiationData?.localName = string
+            else if element == XMLRadiationEachElementLocalName {
+                currentRadiationData?.locationName = string
             }
-            else if element == XMLRadiationEachElementOneHourAveDataTagKey {
-                currentRadiationData?.oneHourAveData = (NSNumberFormatter().numberFromString(string)?.doubleValue)!
-            }
-            else if element == XMLRadiationEachElementOnehourAveTimeTagKey {
-                currentRadiationData?.oneHourAveTime = string
+            else if element == XMLRadiationEachElementseq {
+                currentRadiationData?.seq = (NSNumberFormatter().numberFromString(string)?.integerValue)!
             }
     }
     
@@ -120,9 +118,9 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
         element = ""
         
         if( elementName == XMLRadiationEachElementStartingTagKey ) {
-            if let radiationData = currentRadiationData {
-                dataSet.append(radiationData)
-                print("append" + radiationData.localName)
+            if let radiationLocationData = currentRadiationData {
+                dataSet.append(radiationLocationData)
+                print("append" + radiationLocationData.locationName)
             }
             
             dataTagReadCount++
@@ -133,7 +131,7 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
     func parserDidEndDocument(parser: NSXMLParser) {
         print("All examined data count = \(dataTagReadCount)");
         
-        for data: RadiationData in dataSet {
+        for data: EnvironmentRadiationLocationData in dataSet {
             print(data);
         }
     }

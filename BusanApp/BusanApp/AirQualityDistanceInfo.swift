@@ -40,7 +40,7 @@ class AirQualityDistanceInfo: UIViewController, NSXMLParserDelegate{
     var latitude = 0.0
     let airQualityLocationData: [GroundLocationData] = [
         GroundLocationData(longitude: 35.0998969, latitude: 129.03009210000005),
-        GroundLocationData(longitude: 35.0998969, latitude: 129.03009210000005),
+        GroundLocationData(longitude: 35.119465, latitude: 129.03545570000006),
         GroundLocationData(longitude: 35.05307, latitude: 129.08719999999994),
         GroundLocationData(longitude: 35.157532, latitude: 129.07146799999998),
         GroundLocationData(longitude: 35.2131199, latitude: 129.06560749999994),
@@ -99,13 +99,23 @@ class AirQualityDistanceInfo: UIViewController, NSXMLParserDelegate{
         inputLocation?.longitude = longitude
         inputLocation?.latitude = latitude
         
-        for i in 0 ... airQualityLocationData.count
+        if selectedLocation == nil {
+            selectedLocation = CLLocationCoordinate2D()
+        }
+        
+        for i in 0 ... airQualityLocationData.count-1
         {
             selectedLocation?.latitude = airQualityLocationData[i].latitude
             selectedLocation?.longitude = airQualityLocationData[i].longitude
             
             let tmpInputLocation = CLLocation(latitude: inputLocation!.latitude, longitude: inputLocation!.longitude)
-            let tmpSelectedLocation = CLLocation(latitude: selectedLocation!.latitude, longitude: selectedLocation!.longitude)
+            
+    
+            print("timep---> \(airQualityLocationData[i].longitude)")
+            
+            
+            let tmpSelectedLocation = CLLocation(latitude: selectedLocation!.latitude, longitude: selectedLocation!.longitude)            
+            print("timep2---> \(tmpSelectedLocation)")
             
             if tmpInputLocation.distanceFromLocation(tmpSelectedLocation) < selectedDistance {
                 selectedDistance = tmpInputLocation.distanceFromLocation(tmpSelectedLocation)

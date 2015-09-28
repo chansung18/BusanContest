@@ -163,7 +163,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                             
                         airQualityCompareDistance.beginCompareLocations(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
                             
-                        for distance in radioLocationParser.getDistanceSet() {
+                        for distance in airQualityCompareDistance.getDistanceSet() {
                             let zoneNumber = distance.0
                             airQualityParsing.beginParsing(zoneNumber)
                             

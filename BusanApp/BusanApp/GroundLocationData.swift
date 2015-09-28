@@ -25,8 +25,8 @@ class GroundLocationData: Hashable{
     
     init(longitude: Double, latitude: Double)
     {
-        self.longitude = longitude
-        self.latitude = latitude
+        self.longitude = latitude
+        self.latitude = longitude
     }
     
     

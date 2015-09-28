@@ -50,6 +50,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var index = 0
     let pasingtest = WeatherParser()
+    let radioParsing = EnvironmentRadiationParser()
     let locationManager = CLLocationManager()
     let currentLocationParser = CurrentLocationParser()
     
@@ -126,9 +127,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                         
                         setWeather(pasingtest.getWeatherData())
                         
-                            if timer == nil {
-                             timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)   
-                            }
+                        if timer == nil {
+                         timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)   
+                        }
+                            
+                        radioParsing.beginParsing(<#T##urlLocation: Int##Int#>)
+//                        setRadioData()
                     }
                     else {
                         //default location data must be filled up.
@@ -370,14 +374,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//         Get the new view controller using segue.destinationViewController.
+//         Pass the selected object to the new view controller.
+        if segue.identifier == "RadioSegue" {
+            if let destinationViewController = segue.destinationViewController as? RadioPageViewController {
+                destinationViewController.areaFullName = "\(provinceLabel.text!) \(cityLabel.text!)"
+            }
+        }
     }
-    */
-
 }

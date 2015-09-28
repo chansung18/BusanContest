@@ -17,11 +17,7 @@ class RadioViewController: UIViewController, UITableViewDataSource {
     let regionRadius: CLLocationDistance = 1000
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.navigationController?.navigationBarHidden = false
-        self.navigationController?.navigationBar.topItem?.title = "방사능"
-        
+        super.viewDidLoad()        
 //        radioParser.beginParsing(2)
         
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)

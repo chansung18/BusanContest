@@ -55,6 +55,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
+    var timer: NSTimer?
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
@@ -123,6 +125,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                         pasingtest.beginParsing(getXYFromEarthPoint.x,urlY: getXYFromEarthPoint.y)
                         
                         setWeather(pasingtest.getWeatherData())
+                        
+                            if timer == nil {
+                             timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)   
+                            }
                     }
                     else {
                         //default location data must be filled up.
@@ -362,8 +368,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             humidityData[i] = CGFloat(weatherDataFromParser[i].humidityRate)
             windSpeedData[i] = CGFloat(weatherDataFromParser[i].windSpeed)
         }
-        
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
     }
 
     /*

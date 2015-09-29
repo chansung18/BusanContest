@@ -17,6 +17,7 @@ class RadioViewController: UIViewController, UITableViewDataSource {
     var radioParser = EnvironmentRadiationParser()
     let regionRadius: CLLocationDistance = 1000
     var locationDataSet : [EnvironmentRadiationLocationData] = [EnvironmentRadiationLocationData]()
+    var ridioDataSet: [RadiationData] = [RadiationData]()
     override func viewDidLoad() {
         super.viewDidLoad()        
 //        radioParser.beginParsing(2)
@@ -28,8 +29,11 @@ class RadioViewController: UIViewController, UITableViewDataSource {
         for districData in gpsDataParser.dataSet{
             
             centerMapOnLocation(districData)
+            radioParser.beginParsing(districData.seq)
            
         }
+        ridioDataSet = radioParser.dataSet
+        
         
         
         
@@ -57,6 +61,11 @@ class RadioViewController: UIViewController, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RadioCell")
+        
+        print("index -- > \(indexPath)   localName -> \(ridioDataSet[indexPath.row].localName)")
+        cell?.detailTextLabel?.text = ridioDataSet[indexPath.row].localName
+        
+        
         return cell!
     }
 

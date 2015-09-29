@@ -60,13 +60,17 @@ class RadioViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RadioCell")
+        let cell : RadioTableViewCell = tableView.dequeueReusableCellWithIdentifier("RadioCell") as! RadioTableViewCell
         
         print("index -- > \(indexPath)   localName -> \(ridioDataSet[indexPath.row].localName)")
-        cell?.detailTextLabel?.text = ridioDataSet[indexPath.row].localName
+        cell.detailTextLabel?.text = ridioDataSet[indexPath.row].localName
         
+
+        cell.locationName.text = ridioDataSet[indexPath.row].localName
+        cell.currentLabel.text = "\(ridioDataSet[indexPath.row].currentData)"
+        cell.beforeLabel.text = "\(ridioDataSet[indexPath.row].oneHourAveData)"
         
-        return cell!
+        return cell
     }
 
     

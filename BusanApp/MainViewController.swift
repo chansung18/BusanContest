@@ -580,6 +580,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                 destinationViewController.averageRadiationDataCurrent = averageRadiationDataCurrent
                 
                 destinationViewController.averageRadiationDataBefore = averageRadiationDataBefore
+                destinationViewController.locationDataSet = radioLocationParser.dataSet
             }
         }
         else if segue.identifier == "AirSegue" {

@@ -13,6 +13,16 @@ class RadioPageViewController: UIPageViewController, UIPageViewControllerDataSou
     var areaFullName = ""
     var averageRadiationDataBefore = Double()
     var averageRadiationDataCurrent = Double()
+    var locationDataSet: [EnvironmentRadiationLocationData] = [EnvironmentRadiationLocationData]()
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+         if segue.identifier == "radioViewContoller2" {
+            print("sege")
+        }
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

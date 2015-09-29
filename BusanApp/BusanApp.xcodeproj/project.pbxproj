@@ -119,7 +119,7 @@
 		1E8D5EED1BB4BA81003485A9 /* stromweather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stromweather.png; sourceTree = "<group>"; };
 		1E8D5EEE1BB4BA81003485A9 /* weatherheaveyrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weatherheaveyrain.png; sourceTree = "<group>"; };
 		1E8D5EEF1BB4BA81003485A9 /* weatherrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weatherrain.png; sourceTree = "<group>"; };
-		1E8D5EF71BB4EE76003485A9 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
+		1E8D5EF71BB4EE76003485A9 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioTableViewCell.swift; path = ../RadioTableViewCell.swift; sourceTree = "<group>"; };
 		1EA15FE21BABD9BD00786F92 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		1EDA881D1BA904E600C5E93E /* BusanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDA88211BA904E600C5E93E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -202,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				334992C51BB6A706008D290F /* CoreLocation.framework */,
-				1E8D5EF71BB4EE76003485A9 /* RadioTableViewCell.swift */,
 				1EDA881F1BA904E600C5E93E /* BusanApp */,
 				1EDA881E1BA904E600C5E93E /* Products */,
 				1EDA88351BA904E600C5E93E /* BusanAppTests */,
@@ -243,6 +242,7 @@
 				80D595C71BBAC65B001148D9 /* AirQualityViewController.swift */,
 				80D034851BBAA9D500F90F4D /* AirQualityPageViewController.swift */,
 				80D595C21BBAB2E0001148D9 /* AirQualityDetailViewController.swift */,
+				1E8D5EF71BB4EE76003485A9 /* RadioTableViewCell.swift */,
 				334992C11BB69CD7008D290F /* RadioViewController.swift */,
 				3327DF401BB911EA0079AB52 /* RadioPageViewController.swift */,
 				3327DF441BB91E560079AB52 /* RadioDetailViewController.swift */,

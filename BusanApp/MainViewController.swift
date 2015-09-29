@@ -48,6 +48,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var provinceLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
 
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
+    
     var rainData: [CGFloat] = [15, 13, 5, 20, 9]
     var humidityData: [CGFloat] = [30, 35, 10, 70, 80]
     var windSpeedData: [CGFloat] = [10, 2, 20, 21, 30]
@@ -57,7 +59,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     let radioLocationParser = EnvironmentRadiationParsingLocationInfo()
     let airQualityCompareDistance = AirQualityDistanceInfo()
     let waterQualityParser = WaterParser()
-    
     
     let radioParsing = EnvironmentRadiationParser()
     let airQualityParsing = AirQualityParser()
@@ -71,24 +72,31 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     var averageRadiationDataCurrent = Double()
     var averageRadiationDataBefore = Double()
     
-    func degreesToRadians(angle: Double) -> CGFloat {
-        return CGFloat((angle / 180.0 * M_PI))
+    func radioPointerAnimationWith(value: Double) {
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            if 4.5 - (0.45 * value) > 3 {
+                self.radioGaugePointer.transform = CGAffineTransformMakeRotation(3)
+            }
+            
+            self.radioGaugePointer.transform = CGAffineTransformMakeRotation(4.5 - CGFloat((0.45 * value)))
+        },
+        completion: nil)
+        loadingActivityIndicator.stopAnimating()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
         locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+        
         
         //radiation
-        //0 = -145
-        //10 = 145
-        //29 * 0.11
-        //145 - (29 * 0.11)
-//     
-//        UIView.animateWithDuration(0.5) { () -> Void in
-//            self.radioGaugePointer.transform = CGAffineTransformMakeRotation(self.degreesToRadians(180))
-//        }
+        //worst:  0(radian) = 10
+        //best: 4.5(radian) = 0
+        //0.45 * 0.11
+        //4.5 - (0.45 * 0.11)
+        
     }
     
     override func viewDidLoad() {
@@ -101,8 +109,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         highlightView1.clipsToBounds = true
         
         highlightView3.layer.cornerRadius = highlightView3.frame.size.width/4.5
-        
         highlightView1.clipsToBounds = true
+        
+        loadingActivityIndicator.layer.cornerRadius = loadingActivityIndicator.frame.size.width/4.5
+        loadingActivityIndicator.clipsToBounds = true
         
         graphView.x.grid.visible = false
         graphView.y.grid.visible = false
@@ -121,8 +131,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-            locationManager.startUpdatingLocation()
-//            locationManager.startMonitoringSignificantLocationChanges()
             print("location manager starting update location")
         }
         
@@ -134,7 +142,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     //location manager delegate
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("location update occurred : size of locations : \(locations.count)")
-
+        
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
+        
+        loadingActivityIndicator.startAnimating()
+        
         if locations.count > 0 {
             if currentLocation.latitude != locations[0].coordinate.latitude ||
                 currentLocation.longitude != locations[0].coordinate.longitude {
@@ -143,93 +156,92 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                     print("latitude = \(currentLocation.latitude)")
                     print("longitude = \(currentLocation.longitude)")
                     
-                    if let locationData = currentLocationParser.getLocationFrom(locations[0].coordinate.latitude, longitude
-                        : locations[0].coordinate.longitude) {
-                        provinceLabel.text = locationData.provinceName
-                        cityLabel.text = "(\(locationData.cityName))"
-                            
-                        let getXYFromEarthPoint = AlterationLongitudeLatitude().altbegin(currentLocation.longitude, latitude: currentLocation.latitude)
-                            print("x -> \(getXYFromEarthPoint.x) y -> \(getXYFromEarthPoint.y)")
-                            
-                        pasingtest.beginParsing(getXYFromEarthPoint.x,urlY: getXYFromEarthPoint.y)
-                        
-                        setWeather(pasingtest.getWeatherData())
-                        
-                        if timer == nil {
-                         timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)   
-                        }
-                            
-                        radioLocationParser.beginParsing(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-                            
-                        for distance in radioLocationParser.getDistanceSet() {
-                            let seqNumber = distance.0
-                            
-                             if (seqNumber != 6)&&(seqNumber != 15)&&(seqNumber != 19)&&(seqNumber != 17)&&(seqNumber < 21){
-                                radioParsing.beginParsing(seqNumber)
-                            }
-                            
-                            if radioParsing.dataSet.count > 0 {
-                                print("setNuber----->\(seqNumber)")
-                                break
-                            }
-                        }
-                            
-                        print("size of radio parsing data = \(radioParsing.dataSet.count)")
-                            
-                        var radioDataSetSum = 0.0
-                        var radioDataSetSumBefore = 0.0
-                            
-                        for radiationData in radioParsing.dataSet {
-                            radioDataSetSum += radiationData.currentData
-                            radioDataSetSumBefore += radiationData.oneHourAveData
-                        }
-                            
-                        print("average data out of 20 items : \(radioDataSetSum/Double(radioParsing.dataSet.count))")
-                            
-                        averageRadiationDataCurrent = radioDataSetSum/Double(radioParsing.dataSet.count)
-                        averageRadiationDataBefore = radioDataSetSumBefore/Double(radioParsing.dataSet.count)
-                        
-//                        145 - (29 * dataValue)
-                        let radioDataAve = radioDataSetSum/Double(radioParsing.dataSet.count)
-                        UIView.animateWithDuration(2, animations: { () -> Void in
-                            self.radioGaugePointer.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / CGFloat((145 - (29 * radioDataAve))))
-                        })
-                            
-                        airQualityCompareDistance.beginCompareLocations(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-                            
-                        for distance in airQualityCompareDistance.getDistanceSet() {
-                            let zoneNumber = distance.0
-                            airQualityParsing.beginParsing(zoneNumber)
-                            
+                    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in
+                        if let locationData = self.currentLocationParser.getLocationFrom(locations[0].coordinate.latitude,
+                            longitude :locations[0].coordinate.longitude) {
                                 
-                            if airQualityParsing.dataSet.count > 0 {
-                                print("setNuber----->\(zoneNumber)")
-                                break
-                            }
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.provinceLabel.text = locationData.provinceName
+                                self.cityLabel.text = "(\(locationData.cityName))"
+                            })
+
+                            let getXYFromEarthPoint = AlterationLongitudeLatitude().altbegin(self.currentLocation.longitude, latitude: self.currentLocation.latitude)
+                                
+                            //weather parsing
+                            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in
+                                self.pasingtest.beginParsing(getXYFromEarthPoint.x,urlY: getXYFromEarthPoint.y)
+                                
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    self.setWeather(self.pasingtest.getWeatherData())
+                                    if self.timer == nil {
+                                     self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dataUpdate", userInfo: nil, repeats: true)
+                                    }
+                                })
+                            })
+                                
+                            //radiation parsing
+                            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in
+                                self.radioLocationParser.beginParsing(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+                                
+                                for distance in self.radioLocationParser.getDistanceSet() {
+                                    let seqNumber = distance.0
+        
+                                     if (seqNumber != 6)&&(seqNumber != 15)&&(seqNumber != 19)&&(seqNumber != 17)&&(seqNumber < 21){
+                                        self.radioParsing.beginParsing(seqNumber)
+                                    }
+        
+                                    if self.radioParsing.dataSet.count > 0 {
+                                        print("setNuber----->\(seqNumber)")
+                                        break
+                                    }
+                                }
+                                
+                                print("size of radio parsing data = \(self.radioParsing.dataSet.count)")
+        
+                                var radioDataSetSum = 0.0
+                                var radioDataSetSumBefore = 0.0
+        
+                                for radiationData in self.radioParsing.dataSet {
+                                    radioDataSetSum += radiationData.currentData
+                                    radioDataSetSumBefore += radiationData.oneHourAveData
+                                }
+                                    
+                                print("average data out of 20 items : \(radioDataSetSum/Double(self.radioParsing.dataSet.count))")
+                                
+                                self.averageRadiationDataCurrent = radioDataSetSum/Double(self.radioParsing.dataSet.count)
+                                self.averageRadiationDataBefore = radioDataSetSumBefore/Double(self.radioParsing.dataSet.count)
+        
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    self.radioPointerAnimationWith(self.averageRadiationDataCurrent)
+                                })
+                            })
+                              
+                            //air pollution parsing
+                            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in
+                                self.airQualityCompareDistance.beginCompareLocations(locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+                                
+                                for distance in self.airQualityCompareDistance.getDistanceSet() {
+                                    let zoneNumber = distance.0
+                                    self.airQualityParsing.beginParsing(zoneNumber)
+        
+        
+                                    if self.airQualityParsing.dataSet.count > 0 {
+                                        print("setNuber----->\(zoneNumber)")
+                                        break
+                                    }
+                                }
+                            })
+                                
+                            //water pollution parsing
+                            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in
+                                print("지역이름  :\(locationData.fullName)")
+                                self.waterQualityParser.beginParsing("남구")
+                            })
                         }
-                        
-                        print("지역이름  :\(locationData.fullName)")
-                        waterQualityParser.beginParsing("남구")
-                        
-                        locationManager.stopUpdatingLocation()
-                    }
-                    else {
-                        //default location data must be filled up.
-                        provinceLabel.text = "부산광역시"
-                        cityLabel.text = "(서면)"
-                    }
+                    })
             }
         }
     }
-    
-//    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-//        print("location update to new ... occurred : size of locations")
-//        
-//        print("old location's latitude:\(oldLocation.coordinate.latitude), longitude:\(oldLocation.coordinate.longitude)")
-//        print("new location's latitude:\(newLocation.coordinate.latitude), longitude:\(newLocation.coordinate.longitude)")
-//    }
-    
-    //
     
     func dataUpdate() {
         graphView.highlightDataPoints(index)

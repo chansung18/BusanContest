@@ -86,6 +86,7 @@ class AirQualityDistanceInfo: UIViewController, NSXMLParserDelegate{
         
         return "Location"
     }
+    
     func getDistanceSet() -> [(Int,Double)] {
         return distanceSet.sort() {
             return $0.1 < $1.1

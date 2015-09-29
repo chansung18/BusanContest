@@ -103,12 +103,34 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
             print("value -> \(value)")
             
-            if 4.5 - (0.45 * value) > 3 {
+            var resultvalue = 0.0
+            if (value < 0.03){
+                resultvalue = 0
+            }
+            else if (value < 0.1){
+                resultvalue = 2
+            }
+            else if (value < 0.3){
+                resultvalue = 4
+            }
+            else if (value < 0.5){
+                resultvalue = 7
+            }
+            else if (value < 0.8){
+                resultvalue = 8.5
+            }
+            else if (value < 1){
+                resultvalue = 10.0
+            }
+            
+
+            
+            if 4.5 - (0.45 * resultvalue) > 3 {
                 self.radioGaugePointer.transform = CGAffineTransformMakeRotation(3)
                 
             }
             
-            self.radioGaugePointer.transform = CGAffineTransformMakeRotation(4.5 - CGFloat((0.45 * value)))
+            self.radioGaugePointer.transform = CGAffineTransformMakeRotation(4.5 - CGFloat((0.45 * resultvalue)))
         },
         completion: nil)
         loadingActivityIndicator.stopAnimating()

@@ -14,22 +14,11 @@
             </objects>
             <point key="canvasLocation" x="904" y="-737"/>
         </scene>
-        <!--Weather Info-->
+        <!--Air Qulity Page View Controller-->
         <scene sceneID="Lpc-eU-F67">
             <objects>
-                <viewController id="Sih-cH-EtJ" customClass="WeatherInfo" customModule="BusanApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mZf-X4-1Cm"/>
-                        <viewControllerLayoutGuide type="bottom" id="VT5-hs-4Jt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="l1g-1W-oSC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2p-UU-6Pr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Sih-cH-EtJ" customClass="AirQulityPageViewController" customModule="BusanApp" customModuleProvider="target" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="927" y="256"/>
         </scene>
@@ -432,6 +421,9 @@
                                         <exclude reference="enH-We-7RV"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="Sih-cH-EtJ" kind="show" id="ixv-W9-0fL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtu-FS-3WZ">
                                 <rect key="frame" x="372" y="499" width="75" height="75"/>

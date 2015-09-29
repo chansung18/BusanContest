@@ -40,6 +40,7 @@ class WaterParser: UIViewController, NSXMLParserDelegate{
     {
         
         dataTagReadCount = 0
+        goodResultCount = 0
         for i in 1 ... 47{
             if i<10{
                 XMLWaterEachElementChemicalElementsTagKey.append("water0\(i)")

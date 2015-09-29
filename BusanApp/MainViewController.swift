@@ -81,7 +81,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             print("zzzzzzz : \(allCount)   : \(goodCount)")
             let rateOfGoodResult: Double = goodCount / allCount
             print("rateOfgood--> \(rateOfGoodResult)")
-            let value = 0.1//10.0 - rateOfGoodResult*10
+            let value = 10.0 - rateOfGoodResult*10
             
             print("value -> \(value)")
             
@@ -319,8 +319,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                                         break
                                     }
                                 }
-                                
-                                self.airQualityPointerAnimationWith(self.airQualityResultDataFromParsing)
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    self.airQualityPointerAnimationWith(self.airQualityResultDataFromParsing)
+                                })
                                 
                             })
                            
@@ -333,7 +334,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                                 self.waterDataSet = self.waterQualityParser.dataSet
                                 let goodReslutCount = self.waterQualityParser.goodResultCount
                                 let countOfresult = self.waterQualityParser.dataTagReadCount
-                                self.waterPointerAnimationWith(Double(countOfresult), goodCount: Double(goodReslutCount))
+                                
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    self.waterPointerAnimationWith(Double(countOfresult), goodCount: Double(goodReslutCount))
+                                })
                                 
                                 
                                 

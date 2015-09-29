@@ -581,5 +581,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                 destinationViewController.averageRadiationDataBefore = averageRadiationDataBefore
             }
         }
+        else if segue.identifier == "AirSegue" {
+            if let destinationViewController = segue.destinationViewController as? AirQualityPageViewController {
+                
+            }
+        }
     }
 }

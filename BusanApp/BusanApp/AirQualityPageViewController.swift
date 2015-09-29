@@ -29,8 +29,6 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
         
         setViewControllers([radioViewController1], direction: .Forward, animated: true, completion: nil)
         
-        
-        
         dataSource = self
     }
     
@@ -40,7 +38,7 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        if let _ = viewController as? RadioViewController {
+        if let _ = viewController as? AirQualityViewController {
             return storyboard?.instantiateViewControllerWithIdentifier("airQualityViewController1") as! AirQualityDetailViewController
         }
         
@@ -48,8 +46,8 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        if let _ = viewController as? RadioDetailViewController {
-            return storyboard?.instantiateViewControllerWithIdentifier("airQualityViewController2") as! AirQualityDetailViewController
+        if let _ = viewController as? AirQualityDetailViewController {
+            return storyboard?.instantiateViewControllerWithIdentifier("airQualityViewController2") as! AirQualityViewController
         }
         
         return nil

@@ -50,6 +50,9 @@
 		3327DF4F1BB924F50079AB52 /* toobad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3327DF4B1BB924F50079AB52 /* toobad.png */; settings = {ASSET_TAGS = (); }; };
 		3327DF531BB9293D0079AB52 /* buttongauge2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3327DF521BB9293D0079AB52 /* buttongauge2.png */; settings = {ASSET_TAGS = (); }; };
 		3327DF551BB9B2D90079AB52 /* pointer 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3327DF541BB9B2D90079AB52 /* pointer 2.png */; settings = {ASSET_TAGS = (); }; };
+		3327DF591BBAF4A60079AB52 /* greencircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3327DF561BBAF4A60079AB52 /* greencircle.png */; settings = {ASSET_TAGS = (); }; };
+		3327DF5A1BBAF4A60079AB52 /* redcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3327DF571BBAF4A60079AB52 /* redcircle.png */; settings = {ASSET_TAGS = (); }; };
+		3327DF5B1BBAF4A60079AB52 /* yellowcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3327DF581BBAF4A60079AB52 /* yellowcircle.png */; settings = {ASSET_TAGS = (); }; };
 		334992C21BB69CD7008D290F /* RadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334992C11BB69CD7008D290F /* RadioViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		334992C41BB6A362008D290F /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 334992C31BB6A362008D290F /* right-arrow.png */; settings = {ASSET_TAGS = (); }; };
 		334992C61BB6A706008D290F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334992C51BB6A706008D290F /* CoreLocation.framework */; };
@@ -147,6 +150,9 @@
 		3327DF4B1BB924F50079AB52 /* toobad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toobad.png; sourceTree = "<group>"; };
 		3327DF521BB9293D0079AB52 /* buttongauge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttongauge2.png; sourceTree = "<group>"; };
 		3327DF541BB9B2D90079AB52 /* pointer 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointer 2.png"; sourceTree = "<group>"; };
+		3327DF561BBAF4A60079AB52 /* greencircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greencircle.png; sourceTree = "<group>"; };
+		3327DF571BBAF4A60079AB52 /* redcircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redcircle.png; sourceTree = "<group>"; };
+		3327DF581BBAF4A60079AB52 /* yellowcircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowcircle.png; sourceTree = "<group>"; };
 		334992C11BB69CD7008D290F /* RadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewController.swift; sourceTree = "<group>"; };
 		334992C31BB6A362008D290F /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
 		334992C51BB6A706008D290F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -279,6 +285,9 @@
 				3327DF4B1BB924F50079AB52 /* toobad.png */,
 				1EE1B7211BB110C100D05BDD /* test_icon2.png */,
 				1EE1B76B1BB2225100D05BDD /* test_icon7.png */,
+				3327DF561BBAF4A60079AB52 /* greencircle.png */,
+				3327DF571BBAF4A60079AB52 /* redcircle.png */,
+				3327DF581BBAF4A60079AB52 /* yellowcircle.png */,
 				3327DF461BB91FD30079AB52 /* pointer.png */,
 				1EE1B7691BB2206800D05BDD /* test_icon6.png */,
 				1E8D5EBD1BB382DF003485A9 /* humidity.png */,
@@ -460,6 +469,7 @@
 				334992C41BB6A362008D290F /* right-arrow.png in Resources */,
 				1E8D5EF31BB4BA81003485A9 /* snowfall.png in Resources */,
 				1E8D5EA81BB36C74003485A9 /* gauge_back.png in Resources */,
+				3327DF5A1BBAF4A60079AB52 /* redcircle.png in Resources */,
 				1EE1B7231BB110C100D05BDD /* test_icon2.png in Resources */,
 				1E8D5EC81BB3C543003485A9 /* air-back.png in Resources */,
 				3327DF3D1BB90C950079AB52 /* gaugePointer.png in Resources */,
@@ -468,6 +478,8 @@
 				1E8D5EC91BB3C543003485A9 /* radiation-back.png in Resources */,
 				3327DF4D1BB924F50079AB52 /* commone.png in Resources */,
 				1E8D5EBF1BB382DF003485A9 /* humidity.png in Resources */,
+				3327DF591BBAF4A60079AB52 /* greencircle.png in Resources */,
+				3327DF5B1BBAF4A60079AB52 /* yellowcircle.png in Resources */,
 				1EE1B72C1BB1252100D05BDD /* test_icon5.png in Resources */,
 				1EE1B76A1BB2206800D05BDD /* test_icon6.png in Resources */,
 				1EE1B7241BB110C100D05BDD /* test_icon1.png in Resources */,

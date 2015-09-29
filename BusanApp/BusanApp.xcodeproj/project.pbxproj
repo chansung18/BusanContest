@@ -237,14 +237,14 @@
 				1EDA88201BA904E600C5E93E /* Supporting Files */,
 				1EE1B72D1BB14D0400D05BDD /* GraphView.swift */,
 				807AC4C71BB92BD30096D4E1 /* GroundLocationData.swift */,
-				334992C11BB69CD7008D290F /* RadioViewController.swift */,
-				80D595C71BBAC65B001148D9 /* AirQualityViewController.swift */,
 				807AC4CB1BB93F250096D4E1 /* EnvironmentRadiationLocationData.swift */,
 				334992C71BB6CD85008D290F /* CurrentLocationParser.swift */,
 				334992C91BB6DDCD008D290F /* LocationData.swift */,
-				3327DF401BB911EA0079AB52 /* RadioPageViewController.swift */,
+				80D595C71BBAC65B001148D9 /* AirQualityViewController.swift */,
 				80D034851BBAA9D500F90F4D /* AirQualityPageViewController.swift */,
 				80D595C21BBAB2E0001148D9 /* AirQualityDetailViewController.swift */,
+				334992C11BB69CD7008D290F /* RadioViewController.swift */,
+				3327DF401BB911EA0079AB52 /* RadioPageViewController.swift */,
 				3327DF441BB91E560079AB52 /* RadioDetailViewController.swift */,
 			);
 			path = BusanApp;

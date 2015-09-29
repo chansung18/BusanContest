@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class RadioViewController: UIViewController, UITableViewDataSource {
 
@@ -15,13 +16,24 @@ class RadioViewController: UIViewController, UITableViewDataSource {
     
     var radioParser = EnvironmentRadiationParser()
     let regionRadius: CLLocationDistance = 1000
-    
+    var locationDataSet : [EnvironmentRadiationLocationData] = [EnvironmentRadiationLocationData]()
     override func viewDidLoad() {
         super.viewDidLoad()        
 //        radioParser.beginParsing(2)
         
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        centerMapOnLocation(initialLocation)
+        let gpsDataParser: EnvironmentRadiationParsingLocationInfo = EnvironmentRadiationParsingLocationInfo()
+        gpsDataParser.beginParsing(0.0, longitude: 0.0)
+        locationDataSet = gpsDataParser.dataSet
+        
+        for locationData in gpsDataParser.dataSet{
+            
+            let initialLocation = CLLocation(latitude: 35.165793, longitude: 129.058748)
+            centerMapOnLocation(initialLocation)
+        }
+        
+        
+        
+        
     }
 
     func centerMapOnLocation(location: CLLocation) {

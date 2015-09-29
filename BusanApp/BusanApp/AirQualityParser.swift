@@ -14,14 +14,14 @@ class AirQualityParser: UIViewController, NSXMLParserDelegate {
     
     let XMLAirQualityEachElementStartingTagKey = "item"
     let XMLAirQualityEachElementAreaIndex = "areaIndex"
-    let XMLAirQualityEachElementCurrentTime = "controInnuber"
+    let XMLAirQualityEachElementCurrentTime = "controlnumber"
     let XMLAirQualityEachElementAmountOfCo = "co"
     let XMLAirQualityEachElementAmountOfNo2 = "no2"
     let XMLAirQualityEachElementAmountOfo3 = "o3"
     let XMLAirQualityEachElementAmountOfPm10 = "pm10"
     let XMLAirQualityEachElementAmountOfPm25 = "pm25"
     let XMLAirQualityEachElementSiteName = "site"
-    let XMLAirQualityEachElementAmountOfso2 = "os2"
+    let XMLAirQualityEachElementAmountOfso2 = "so2"
     
     var groudLocationKey: Dictionary<GroundLocationData,String> = [
         GroundLocationData(longitude: 35.0998969, latitude: 129.03009210000005): "221112",

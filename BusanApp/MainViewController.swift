@@ -71,11 +71,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var averageRadiationDataCurrent = Double()
     var averageRadiationDataBefore = Double()
+    var airQualityResultDataFromParsing = AirQualityData()
     
     func radioPointerAnimationWith(value: Double) {
         UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            print("value -> \(value)")
+            
             if 4.5 - (0.45 * value) > 3 {
                 self.radioGaugePointer.transform = CGAffineTransformMakeRotation(3)
+                
             }
             
             self.radioGaugePointer.transform = CGAffineTransformMakeRotation(4.5 - CGFloat((0.45 * value)))
@@ -83,6 +87,62 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         completion: nil)
         loadingActivityIndicator.stopAnimating()
     }
+    func airQualityPointerAnimationWith(value: AirQualityData) {
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            var resultvalue = 10.0
+            if (NSNumberFormatter().numberFromString(value.pm10)?.doubleValue < 15.0) {
+                resultvalue = resultvalue - 1.5
+            }
+            else if (NSNumberFormatter().numberFromString(value.pm10)?.doubleValue < 50.0) {
+                resultvalue = resultvalue - 0.7
+            }
+            if (NSNumberFormatter().numberFromString(value.pm25)?.doubleValue < 30.0) {
+                resultvalue = resultvalue - 1.5
+            }
+            else if (NSNumberFormatter().numberFromString(value.pm25)?.doubleValue < 80.0) {
+                resultvalue = resultvalue - 0.7
+            }
+            if (NSNumberFormatter().numberFromString(value.o3)?.doubleValue < 0.03) {
+                resultvalue = resultvalue - 1.5
+            }
+            else if (NSNumberFormatter().numberFromString(value.o3)?.doubleValue < 0.09) {
+                resultvalue = resultvalue - 0.7
+            }
+            if (NSNumberFormatter().numberFromString(value.so2)?.doubleValue < 1.00) {
+                resultvalue = resultvalue - 1.5
+            }
+            else if (NSNumberFormatter().numberFromString(value.so2)?.doubleValue > 10.0) {
+                resultvalue = resultvalue + 4.0
+            }
+            if (NSNumberFormatter().numberFromString(value.co)?.doubleValue < 3.00) {
+                resultvalue = resultvalue - 1.5
+            }
+            else if (NSNumberFormatter().numberFromString(value.co)?.doubleValue < 7.0) {
+                resultvalue = resultvalue - 0.7
+            }
+            if (NSNumberFormatter().numberFromString(value.no2)?.doubleValue < 0.02) {
+                resultvalue = resultvalue - 1.5
+            }
+            else if (NSNumberFormatter().numberFromString(value.co)?.doubleValue < 0.03) {
+                resultvalue = resultvalue - 0.7
+            }
+
+            
+            
+            if 4.5 - (0.45 * resultvalue) > 3 {
+                
+                print("kkkkkkk")
+                self.airGaugePointer.transform = CGAffineTransformMakeRotation(3)
+                
+            }
+            
+            self.airGaugePointer.transform = CGAffineTransformMakeRotation(4.5 - CGFloat((0.45 * resultvalue)))
+            },
+            completion: nil)
+        loadingActivityIndicator.stopAnimating()
+    }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -223,6 +283,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                                 for distance in self.airQualityCompareDistance.getDistanceSet() {
                                     let zoneNumber = distance.0
                                     self.airQualityParsing.beginParsing(zoneNumber)
+                                    self.airQualityResultDataFromParsing = self.airQualityParsing.dataSet[0]
+                                    print("zzzz\(self.airQualityParsing.dataSet[0])")
+                                    
         
         
                                     if self.airQualityParsing.dataSet.count > 0 {
@@ -230,7 +293,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                                         break
                                     }
                                 }
+                                
+                                self.airQualityPointerAnimationWith(self.airQualityResultDataFromParsing)
+                                
                             })
+                           
+                            
                                 
                             //water pollution parsing
                             dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in

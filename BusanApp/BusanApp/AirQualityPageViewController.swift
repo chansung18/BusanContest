@@ -18,7 +18,7 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
         super.viewDidLoad()
         
         self.navigationController?.navigationBarHidden = false
-        self.navigationController?.navigationBar.topItem?.title = "방사능"
+        self.navigationController?.navigationBar.topItem?.title = "대기질"
         self.navigationController?.navigationBar.alpha = 0.5
         
         // Do any additional setup after loading the view.
@@ -41,7 +41,7 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         if let _ = viewController as? RadioViewController {
-            return storyboard?.instantiateViewControllerWithIdentifier("radioViewContoller1") as! RadioDetailViewController
+            return storyboard?.instantiateViewControllerWithIdentifier("airQualityViewController1") as! AirQualityDetailViewController
         }
         
         return nil
@@ -49,7 +49,7 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         if let _ = viewController as? RadioDetailViewController {
-            return storyboard?.instantiateViewControllerWithIdentifier("radioViewContoller2") as! RadioViewController
+            return storyboard?.instantiateViewControllerWithIdentifier("airQualityViewController2") as! AirQualityDetailViewController
         }
         
         return nil

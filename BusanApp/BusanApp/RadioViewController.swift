@@ -27,25 +27,25 @@ class RadioViewController: UIViewController, UITableViewDataSource {
         
         for districData in gpsDataParser.dataSet{
             
-            
+            centerMapOnLocation(districData)
            
         }
-         centerMapOnLocation()
+        
         
         
         
     }
 
-    func centerMapOnLocation() {
+    func centerMapOnLocation(districData: EnvironmentRadiationLocationData) {
         
         
-        let location = CLLocationCoordinate2DMake(42.68628, -73.85742)
+        let location = CLLocationCoordinate2DMake(districData.latitude, districData.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let coordinateRegion = MKCoordinateRegion(center: location, span: span)
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
-        annotation.title = "test"// gpsData.locationName
+        annotation.title = districData.locationName
         annotation.subtitle = ("latitude : \(location.latitude) longitude : \(location.longitude)")
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotation(annotation)

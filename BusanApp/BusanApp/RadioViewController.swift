@@ -25,21 +25,30 @@ class RadioViewController: UIViewController, UITableViewDataSource {
         gpsDataParser.beginParsing(0.0, longitude: 0.0)
         locationDataSet = gpsDataParser.dataSet
         
-        for locationData in gpsDataParser.dataSet{
+        for districData in gpsDataParser.dataSet{
             
-            let initialLocation = CLLocation(latitude: 35.165793, longitude: 129.058748)
-            centerMapOnLocation(initialLocation)
+            
+           
         }
-        
+         centerMapOnLocation()
         
         
         
     }
 
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-            regionRadius * 2.0, regionRadius * 2.0)
+    func centerMapOnLocation() {
+        
+        
+        let location = CLLocationCoordinate2DMake(42.68628, -73.85742)
+        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+        let coordinateRegion = MKCoordinateRegion(center: location, span: span)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "test"// gpsData.locationName
+        annotation.subtitle = ("latitude : \(location.latitude) longitude : \(location.longitude)")
         mapView.setRegion(coordinateRegion, animated: true)
+        mapView.addAnnotation(annotation)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

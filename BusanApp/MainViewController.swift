@@ -578,6 +578,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             if let destinationViewController = segue.destinationViewController as? RadioPageViewController {
                 destinationViewController.areaFullName = "\(provinceLabel.text!) \(cityLabel.text!)"
                 destinationViewController.averageRadiationDataCurrent = averageRadiationDataCurrent
+                
                 destinationViewController.averageRadiationDataBefore = averageRadiationDataBefore
             }
         }

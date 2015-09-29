@@ -30,7 +30,10 @@ class RadioPageViewController: UIPageViewController, UIPageViewControllerDataSou
         setViewControllers([radioViewController1], direction: .Forward, animated: true, completion: nil)
         
         radioViewController1.areaLabel.text = areaFullName
-        
+        print("ccc -> \(averageRadiationDataCurrent), bbbbb-> \(averageRadiationDataBefore)")
+        radioViewController1.currentRadioValue = averageRadiationDataCurrent
+        radioViewController1.beforeRadioValue = averageRadiationDataBefore
+        radioViewController1.setDataValue()
         dataSource = self
     }
 

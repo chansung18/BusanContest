@@ -44,7 +44,7 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
         let getEnvironmentalRadiationPlaceListURL = "http://opendata.busan.go.kr/openapi/service/EnvironmentalRadiationInfoService/getEnvironmentalRadiationInfoDetail?"
         let serviceKey = "ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
         
-        let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(20)&seq=\(seqISDistrictNumber)&\(serviceKey)"
+        let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(1)&seq=\(seqISDistrictNumber)&\(serviceKey)"
         
         posts = []
         if let url = NSURL(string: urlInString) {
@@ -118,7 +118,7 @@ class EnvironmentRadiationParser: UIViewController, NSXMLParserDelegate {
         if( elementName == XMLRadiationEachElementStartingTagKey ) {
             if let radiationData = currentRadiationData {
                 dataSet.append(radiationData)
-                print("append" + radiationData.localName)
+                //print("append" + radiationData.localName)
             }
             
             dataTagReadCount++

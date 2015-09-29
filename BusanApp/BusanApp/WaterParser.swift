@@ -19,6 +19,8 @@ class WaterParser: UIViewController, NSXMLParserDelegate{
     let XMLWaterEachElementInspecPointTagKey = "inspecPoint"
     let XMLWaterEachElementResultTagKey = "result"
     
+    var goodResultCount = 0
+    var badResultCount = 0
     
     var parser = NSXMLParser()
     var posts = NSMutableArray()
@@ -64,7 +66,7 @@ class WaterParser: UIViewController, NSXMLParserDelegate{
         
         posts = []
         
-        print("url = \(urlInString)")
+        //print("url = \(urlInString)")
         
         if let url = NSURL(string: urlInString) {
             parser = NSXMLParser(contentsOfURL:(url))!
@@ -127,13 +129,21 @@ class WaterParser: UIViewController, NSXMLParserDelegate{
             }
             else if element == XMLWaterEachElementResultTagKey{
                 currentWaterData?.result = string
+                if currentWaterData?.result == "부적합" {
+                    badResultCount++
+                }
+                else{
+                    goodResultCount++
+                }
+                
+                    
             }
             else{
                 
                 // let tmepElement = XMLWaterEachElementChemicalElementsTagKey..
                 if  XMLWaterEachElementChemicalElementsTagKey.contains(element as String){
                     currentWaterData?.chemicalElements.append(string)
-                    print("\(element) = \(string)")
+                   // print("\(element) = \(string)")
                     
                 }
                 
@@ -163,6 +173,8 @@ class WaterParser: UIViewController, NSXMLParserDelegate{
         for data: WaterData in dataSet {
             print(data);
         }
+        print("good : \(goodResultCount)")
+        print("bad :  \(badResultCount)")
     }
     
     

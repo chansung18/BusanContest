@@ -23,29 +23,7 @@ class AirQualityParser: UIViewController, NSXMLParserDelegate {
     let XMLAirQualityEachElementSiteName = "site"
     let XMLAirQualityEachElementAmountOfso2 = "so2"
     
-    var groudLocationKey: Dictionary<GroundLocationData,String> = [
-        GroundLocationData(longitude: 35.0998969, latitude: 129.03009210000005): "221112",
-        GroundLocationData(longitude: 35.119465, latitude: 129.03545570000006): "221131",
-        GroundLocationData(longitude: 35.05307, latitude: 129.08719999999994): "221141",
-        GroundLocationData(longitude: 35.157532, latitude: 129.07146799999998): "221152",
-        GroundLocationData(longitude: 35.2131199, latitude: 129.06560749999994): "221162",
-        GroundLocationData(longitude: 35.2073963, latitude: 129.1018461): "221163",
-        GroundLocationData(longitude: 35.1414268, latitude: 129.0932454): "221172",
-        GroundLocationData(longitude: 35.1441129, latitude: 128.98728989999995): "221181",
-        GroundLocationData(longitude: 35.2121935, latitude: 129.01400869999998): "221182",
-        GroundLocationData(longitude: 35.28321, latitude: 129.0661705): "35.2121935",
-        GroundLocationData(longitude: 35.1838918, latitude: 129.17639370000006): "221192",
-        GroundLocationData(longitude: 35.0768871, latitude: 128.97067500000003): "221202",
-        GroundLocationData(longitude: 35.2145209, latitude: 128.98062170000003): "35.0768871",
-        GroundLocationData(longitude: 35.1266126, latitude: 128.8586633): "221212",
-        GroundLocationData(longitude: 35.1816156, latitude: 129.0882418): "221221",
-        GroundLocationData(longitude: 35.2387394, latitude: 129.21581700000002): "221231",
-        GroundLocationData(longitude: 35.339239, latitude: 129.17749779999997): "221233",
-        GroundLocationData(longitude: 35.1320345, latitude: 129.04007079999997): "221241",
-        GroundLocationData(longitude: 35.2303619, latitude: 129.0955619): "221251",
-        GroundLocationData(longitude: 35.1595722, latitude: 129.1088482): "221271",
-        GroundLocationData(longitude: 35.1795543, latitude: 129.07564160000004): "221281"
-    ]
+
     
     
     var parser = NSXMLParser()
@@ -164,7 +142,7 @@ class AirQualityParser: UIViewController, NSXMLParserDelegate {
         if( elementName == XMLAirQualityEachElementStartingTagKey ) {
             if let airQualtyData = currentAirQualityData {
                 dataSet.append(airQualtyData)
-                print("append" + airQualtyData.site)
+               // print("append" + airQualtyData.site)
             }
             
             dataTagReadCount++

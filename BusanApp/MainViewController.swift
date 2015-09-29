@@ -72,6 +72,32 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     var averageRadiationDataCurrent = Double()
     var averageRadiationDataBefore = Double()
     var airQualityResultDataFromParsing = AirQualityData()
+    var waterDataSet: [WaterData] = [WaterData]()
+    
+ 
+    func waterPointerAnimationWith(allCount: Double , goodCount: Double) {
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            
+            print("zzzzzzz : \(allCount)   : \(goodCount)")
+            let rateOfGoodResult: Double = goodCount / allCount
+            print("rateOfgood--> \(rateOfGoodResult)")
+            let value = 0.1//10.0 - rateOfGoodResult*10
+            
+            print("value -> \(value)")
+            
+            if 4.5 - (0.45 * value) > 3 {
+                self.waterGaugePointer.transform = CGAffineTransformMakeRotation(3)
+                print("hhhhhh")
+                
+            }
+            
+            self.waterGaugePointer.transform = CGAffineTransformMakeRotation(4.5 - CGFloat((0.45 * value)))
+            },
+            completion: nil)
+        loadingActivityIndicator.stopAnimating()
+    }
+    
+    
     
     func radioPointerAnimationWith(value: Double) {
         UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
@@ -304,6 +330,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                             dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), { () -> Void in
                                 print("지역이름  :\(locationData.fullName)")
                                 self.waterQualityParser.beginParsing("남구")
+                                self.waterDataSet = self.waterQualityParser.dataSet
+                                let goodReslutCount = self.waterQualityParser.goodResultCount
+                                let countOfresult = self.waterQualityParser.dataTagReadCount
+                                self.waterPointerAnimationWith(Double(countOfresult), goodCount: Double(goodReslutCount))
+                                
+                                
+                                
                             })
                         }
                     })

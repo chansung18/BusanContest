@@ -112,11 +112,11 @@ class AirQualityDistanceInfo: UIViewController, NSXMLParserDelegate{
             let tmpInputLocation = CLLocation(latitude: inputLocation!.latitude, longitude: inputLocation!.longitude)
             
     
-            print("timep---> \(airQualityLocationData[i].longitude)")
+           // print("timep---> \(airQualityLocationData[i].longitude)")
             
             
             let tmpSelectedLocation = CLLocation(latitude: selectedLocation!.latitude, longitude: selectedLocation!.longitude)            
-            print("timep2---> \(tmpSelectedLocation)")
+           // print("timep2---> \(tmpSelectedLocation)")
             
             if tmpInputLocation.distanceFromLocation(tmpSelectedLocation) < selectedDistance {
                 selectedDistance = tmpInputLocation.distanceFromLocation(tmpSelectedLocation)

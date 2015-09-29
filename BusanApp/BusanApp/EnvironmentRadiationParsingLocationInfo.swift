@@ -168,7 +168,7 @@ class EnvironmentRadiationParsingLocationInfo: UIViewController, NSXMLParserDele
                 
               
                         distanceSet.append((radiationLocationData.seq, tmpInputLocation.distanceFromLocation(tmpSelectedLocation)))
-                        print("append    :  " + radiationLocationData.locationName)
+                        //print("append    :  " + radiationLocationData.locationName)
                         dataTagReadCount++
                     }
                 }

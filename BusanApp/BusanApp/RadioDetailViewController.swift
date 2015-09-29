@@ -34,7 +34,7 @@ class RadioDetailViewController: UIViewController {
     }
     func setDataValue(){
         print("ccc -> \(currentRadioValue), bbbbb-> \(beforeRadioValue)")
-        oneHourRadio.text = ("\(beforeRadioValue)") //uSv/h")
+        oneHourRadio.text = ("\(beforeRadioValue)")// \n uSv/h")
         if (beforeRadioValue < 0.03){
             oneHourLabel.text = "아주좋음"
         }

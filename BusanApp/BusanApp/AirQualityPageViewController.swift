@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AirQulityPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     var areaFullName = ""
     var averageRadiationDataBefore = Double()
@@ -23,13 +23,13 @@ class AirQulityPageViewController: UIPageViewController, UIPageViewControllerDat
         
         // Do any additional setup after loading the view.
         
-        print("area full name: \(areaFullName)")
+        print("area full name: \(areaFullName)-------2")
         
-        let radioViewController1 = storyboard?.instantiateViewControllerWithIdentifier("radioViewContoller1") as! RadioDetailViewController
+        let radioViewController1 = storyboard?.instantiateViewControllerWithIdentifier("airQualityViewController1") as! AirQualityDetailViewController
         
         setViewControllers([radioViewController1], direction: .Forward, animated: true, completion: nil)
         
-        radioViewController1.areaLabel.text = areaFullName
+        
         
         dataSource = self
     }

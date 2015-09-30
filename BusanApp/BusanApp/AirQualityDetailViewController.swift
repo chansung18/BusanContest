@@ -10,15 +10,31 @@ import UIKit
 
 
 class AirQualityDetailViewController: UIViewController {
+    var smallDustValue = Double()
+    var coValue = Double()
+    var noValue = Double()
+    var so2Value = Double()
+    var ozValue = Double()
+    var dustValue = Double()
     
-        
-    var currentRadioValue: Int?
-    var beforeRadioValue: Int?
+    @IBOutlet weak var smallDustStatusImage: UIImageView!
+    @IBOutlet weak var coStatusImage: UIImageView!
+    @IBOutlet weak var noStatusImage: UIImageView!
+    @IBOutlet weak var so2StatusImage: UIImageView!
+    @IBOutlet weak var ozStatusImage: UIImageView!
+    @IBOutlet weak var dustStatusImage: UIImageView!
+    
+    @IBOutlet weak var smallDustStatus: UILabel!
+    @IBOutlet weak var coStatus: UILabel!
+    @IBOutlet weak var noStatus: UIImageView!
+    @IBOutlet weak var so2Status: UILabel!
+    @IBOutlet weak var ozStatus: UILabel!
+    @IBOutlet weak var dustStatus: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {

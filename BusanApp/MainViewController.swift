@@ -94,7 +94,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             self.waterGaugePointer.transform = CGAffineTransformMakeRotation(4.5 - CGFloat((0.45 * value)))
             },
             completion: nil)
-        loadingActivityIndicator.stopAnimating()
     }
     
     
@@ -359,10 +358,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                                 
                                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                     self.waterPointerAnimationWith(Double(countOfresult), goodCount: Double(goodReslutCount))
+                                    self.loadingActivityIndicator.stopAnimating()
                                 })
-                                
-                                
-                                
                             })
                         }
                     })
@@ -607,7 +604,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         }
         else if segue.identifier == "AirSegue" {
             if let destinationViewController = segue.destinationViewController as? AirQualityPageViewController {
-                
+//                destinationViewController.smallDustValue =
+//                destinationViewController.coValue
+//                destinationViewController.noValue
+//                destinationViewController.so2Value
+//                destinationViewController.ozValue
+//                destinationViewController.dustValue
             }
         }
     }

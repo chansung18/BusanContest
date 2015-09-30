@@ -12,8 +12,8 @@ class RadioTableViewCell: UITableViewCell {
 
     @IBOutlet weak var gaugeImageView: UIImageView!
     @IBOutlet weak var locationName: UILabel!
-    @IBOutlet weak var currentLabel: UILabel!
     @IBOutlet weak var beforeLabel: UILabel!
+    @IBOutlet weak var currentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

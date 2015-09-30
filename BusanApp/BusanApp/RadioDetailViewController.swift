@@ -16,6 +16,7 @@ class RadioDetailViewController: UIViewController {
     @IBOutlet weak var emoticonView: UIImageView!
     @IBOutlet weak var oneHourLabel: UILabel!
     @IBOutlet weak var currentLabel: UILabel!
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
     var currentRadioValue = 0.0
     var beforeRadioValue = 0.0
@@ -23,8 +24,6 @@ class RadioDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   
-
         // Do any additional setup after loading the view.
     }
 
@@ -32,9 +31,19 @@ class RadioDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func setDataValue(){
         print("ccc -> \(currentRadioValue), bbbbb-> \(beforeRadioValue)")
+        
+        //10 - 100%
+        //1 - 10%
+        //0.1 - 1%
+        //0.01 - 0.1%
+        //0.099 - 0.99%
+        //100 - beforeRadioValue*10
+        
         oneHourRadio.text = ("\(beforeRadioValue)")// \n uSv/h")
+        
         if (beforeRadioValue < 0.03){
             oneHourLabel.text = "아주좋음"
         }
@@ -55,6 +64,7 @@ class RadioDetailViewController: UIViewController {
         }
         
         currentRadio.text = ("\(currentRadioValue)")// uSv/h")
+        
         if (currentRadioValue < 0.03){
             currentLabel.text = "아주좋음"
         }

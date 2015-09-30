@@ -11,6 +11,7 @@ import MapKit
 class AirQualityViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var tableView: UITableView!
     
     var radioParser = EnvironmentRadiationParser()
     let regionRadius: CLLocationDistance = 1000
@@ -34,7 +35,7 @@ class AirQualityViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RadioCell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("AirCell")
         return cell!
     }
     

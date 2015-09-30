@@ -14,6 +14,13 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
     var averageRadiationDataBefore = Double()
     var averageRadiationDataCurrent = Double()
     
+    var smallDustValue = Double()
+    var coValue = Double()
+    var noValue = Double()
+    var so2Value = Double()
+    var ozValue = Double()
+    var dustValue = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +33,12 @@ class AirQualityPageViewController: UIPageViewController, UIPageViewControllerDa
         print("area full name: \(areaFullName)-------2")
         
         let radioViewController1 = storyboard?.instantiateViewControllerWithIdentifier("airQualityViewController1") as! AirQualityDetailViewController
+        radioViewController1.smallDustValue = smallDustValue
+        radioViewController1.coValue = coValue
+        radioViewController1.noValue = noValue
+        radioViewController1.so2Value = so2Value
+        radioViewController1.ozValue = ozValue
+        radioViewController1.dustValue = dustValue
         
         setViewControllers([radioViewController1], direction: .Forward, animated: true, completion: nil)
         

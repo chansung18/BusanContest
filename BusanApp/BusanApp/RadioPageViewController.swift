@@ -62,7 +62,8 @@ class RadioPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         if let _ = viewController as? RadioDetailViewController {
-            return storyboard?.instantiateViewControllerWithIdentifier("radioViewContoller2") as! RadioViewController
+            let destinationViewController = storyboard?.instantiateViewControllerWithIdentifier("radioViewContoller2") as! RadioViewController
+            return destinationViewController
         }
         
         return nil

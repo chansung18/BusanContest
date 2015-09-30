@@ -602,14 +602,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                 destinationViewController.locationDataSet = radioLocationParser.dataSet
             }
         }
-        else if segue.identifier == "AirSegue" {
+        else if segue.identifier == "AirSeque" {
             if let destinationViewController = segue.destinationViewController as? AirQualityPageViewController {
-//                destinationViewController.smallDustValue =
-//                destinationViewController.coValue
-//                destinationViewController.noValue
-//                destinationViewController.so2Value
-//                destinationViewController.ozValue
-//                destinationViewController.dustValue
+                destinationViewController.smallDustValue = (NSNumberFormatter().numberFromString(airQualityParsing.dataSet[0].pm10)?.doubleValue)!
+                destinationViewController.coValue = (NSNumberFormatter().numberFromString(airQualityParsing.dataSet[0].co)?.doubleValue)!
+                destinationViewController.noValue = (NSNumberFormatter().numberFromString(airQualityParsing.dataSet[0].no2)?.doubleValue)!
+                destinationViewController.so2Value = (NSNumberFormatter().numberFromString(airQualityParsing.dataSet[0].so2)?.doubleValue)!
+                destinationViewController.ozValue = (NSNumberFormatter().numberFromString(airQualityParsing.dataSet[0].o3)?.doubleValue)!
+                destinationViewController.dustValue = (NSNumberFormatter().numberFromString(airQualityParsing.dataSet[0].pm25)?.doubleValue)!
             }
         }
     }

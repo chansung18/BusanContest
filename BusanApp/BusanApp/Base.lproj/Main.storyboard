@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L6D-dn-kEy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L6D-dn-kEy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -327,7 +327,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="qxL-d0-IYi" kind="show" id="0gC-iE-Rfj"/>
+                                    <segue destination="qxL-d0-IYi" kind="show" identifier="AirSeque" id="0gC-iE-Rfj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDp-xj-dIQ">
@@ -1125,11 +1125,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="airDustValue" destination="a6R-wY-ExS" id="Gwq-sF-0M1"/>
                         <outlet property="coStatus" destination="uoH-5a-caH" id="uW4-Yh-Ld9"/>
                         <outlet property="coStatusImage" destination="1We-T0-jCA" id="eIV-vZ-wUV"/>
                         <outlet property="dustStatus" destination="Ymz-cD-Zef" id="wuc-Ey-Oxd"/>
                         <outlet property="dustStatusImage" destination="hVc-6l-Xbl" id="3Jd-PN-KvW"/>
                         <outlet property="noStatus" destination="2OL-jN-oWc" id="fR7-F3-HLN"/>
+                        <outlet property="noStatus1" destination="FnL-LK-mJF" id="pkA-RK-oFY"/>
                         <outlet property="noStatusImage" destination="2OL-jN-oWc" id="ahO-e9-xgQ"/>
                         <outlet property="ozStatus" destination="wFa-03-vwl" id="tWW-4v-T1H"/>
                         <outlet property="ozStatusImage" destination="4wD-5A-oaP" id="oFz-0o-tH2"/>

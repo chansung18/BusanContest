@@ -48,7 +48,7 @@ class AirQualityParser: UIViewController, NSXMLParserDelegate {
         let serviceKey = "ServiceKey=hUer3lXoCRhuXvM%2FQ%2F8x1nnDNcqCxmKpM1XY9J08dnXW4sgh0wwZYQK0eEohYWtPUQq5mQ7b%2BH9l1QAE%2BAwrbg%3D%3D"
 
    
-        let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(5)&idx=\(zoneNumber)&\(serviceKey)"
+        let urlInString = "\(getEnvironmentalRadiationPlaceListURL)numOfRows=\(1)&idx=\(zoneNumber)&\(serviceKey)"
         
         
         

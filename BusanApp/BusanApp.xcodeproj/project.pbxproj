@@ -68,6 +68,7 @@
 		807AC4CA1BB93E5C0096D4E1 /* EnvironmentRadiationParsingLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4C91BB93E5C0096D4E1 /* EnvironmentRadiationParsingLocationInfo.swift */; settings = {ASSET_TAGS = (); }; };
 		807AC4CC1BB93F250096D4E1 /* EnvironmentRadiationLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4CB1BB93F250096D4E1 /* EnvironmentRadiationLocationData.swift */; settings = {ASSET_TAGS = (); }; };
 		807AC4D21BB97C650096D4E1 /* AirQualityDistanceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4D11BB97C650096D4E1 /* AirQualityDistanceInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		8089747E1BBBAE8A0021F611 /* WaterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089747D1BBBAE8A0021F611 /* WaterViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C571ED1BAC07EC00024E2F /* DustRaito.swift */; settings = {ASSET_TAGS = (); }; };
 		80D034861BBAA9D500F90F4D /* AirQualityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D034851BBAA9D500F90F4D /* AirQualityPageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		80D06BB01BB552A900A70294 /* WeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D06BAF1BB552A900A70294 /* WeatherParser.swift */; settings = {ASSET_TAGS = (); }; };
@@ -170,6 +171,7 @@
 		807AC4C91BB93E5C0096D4E1 /* EnvironmentRadiationParsingLocationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentRadiationParsingLocationInfo.swift; sourceTree = "<group>"; };
 		807AC4CB1BB93F250096D4E1 /* EnvironmentRadiationLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentRadiationLocationData.swift; sourceTree = "<group>"; };
 		807AC4D11BB97C650096D4E1 /* AirQualityDistanceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityDistanceInfo.swift; sourceTree = "<group>"; };
+		8089747D1BBBAE8A0021F611 /* WaterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewCell.swift; sourceTree = "<group>"; };
 		80C571ED1BAC07EC00024E2F /* DustRaito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DustRaito.swift; sourceTree = "<group>"; };
 		80D034851BBAA9D500F90F4D /* AirQualityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityPageViewController.swift; sourceTree = "<group>"; };
 		80D06BAF1BB552A900A70294 /* WeatherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherParser.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				3327DF441BB91E560079AB52 /* RadioDetailViewController.swift */,
 				1E8584EF1BBB697A002097AB /* AirTableViewCell.swift */,
 				1E8584F11BBB9A9F002097AB /* WaterViewController.swift */,
+				8089747D1BBBAE8A0021F611 /* WaterViewCell.swift */,
 			);
 			path = BusanApp;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				1EDA88231BA904E600C5E93E /* AppDelegate.swift in Sources */,
 				334992CA1BB6DDCD008D290F /* LocationData.swift in Sources */,
 				806A09E91BAD489500CC6D98 /* EnvironmentRadiationInfo.swift in Sources */,
+				8089747E1BBBAE8A0021F611 /* WaterViewCell.swift in Sources */,
 				807AC4CA1BB93E5C0096D4E1 /* EnvironmentRadiationParsingLocationInfo.swift in Sources */,
 				1E8584F01BBB697A002097AB /* AirTableViewCell.swift in Sources */,
 				807AC4C81BB92BD30096D4E1 /* GroundLocationData.swift in Sources */,

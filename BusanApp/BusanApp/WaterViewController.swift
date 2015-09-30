@@ -8,8 +8,13 @@
 
 import UIKit
 
-class WaterViewController: UIViewController {
+class WaterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var provinceName: UILabel!
+  
+    
+    var waterDataSet: [WaterData] = [WaterData]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +26,8 @@ class WaterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
 
     /*
     // MARK: - Navigation
@@ -31,5 +38,22 @@ class WaterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.waterDataSet.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell : WaterViewCell = tableView.dequeueReusableCellWithIdentifier("WaterCell") as! WaterViewCell
+        print("dddd")
+        cell.streetName.text = waterDataSet[indexPath.row].inspecArea
+        cell.result.text = waterDataSet[indexPath.row].result
+        let chemicalElement = waterDataSet[indexPath.row].chemicalElements
+        cell.gernalGerm.text = "\(chemicalElement[5])"
+        cell.allGerm.text = "\(chemicalElement[6])"
+        cell .partGerm.text  =    "\(chemicalElement[7])"
+        
+    
+        return cell
+    }
 
 }

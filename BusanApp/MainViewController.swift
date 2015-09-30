@@ -614,6 +614,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         }
         else if segue.identifier == "WaterSegue" {
             if let destinationViewController = segue.destinationViewController as? WaterViewController {
+                
+                destinationViewController.waterDataSet = waterDataSet
             }
         }
     }

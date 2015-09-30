@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E8584F01BBB697A002097AB /* AirTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8584EF1BBB697A002097AB /* AirTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		1E8584F21BBB9A9F002097AB /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8584F11BBB9A9F002097AB /* WaterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1E8D5EA81BB36C74003485A9 /* gauge_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EA71BB36C74003485A9 /* gauge_back.png */; settings = {ASSET_TAGS = (); }; };
 		1E8D5EAA1BB36C7C003485A9 /* water_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D5EA91BB36C7C003485A9 /* water_back.png */; settings = {ASSET_TAGS = (); }; };
 		1E8D5EBA1BB38089003485A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D5EB91BB38089003485A9 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -105,6 +106,7 @@
 
 /* Begin PBXFileReference section */
 		1E8584EF1BBB697A002097AB /* AirTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirTableViewCell.swift; sourceTree = "<group>"; };
+		1E8584F11BBB9A9F002097AB /* WaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
 		1E8D5EA71BB36C74003485A9 /* gauge_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gauge_back.png; sourceTree = "<group>"; };
 		1E8D5EA91BB36C7C003485A9 /* water_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_back.png; sourceTree = "<group>"; };
 		1E8D5EB91BB38089003485A9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				3327DF401BB911EA0079AB52 /* RadioPageViewController.swift */,
 				3327DF441BB91E560079AB52 /* RadioDetailViewController.swift */,
 				1E8584EF1BBB697A002097AB /* AirTableViewCell.swift */,
+				1E8584F11BBB9A9F002097AB /* WaterViewController.swift */,
 			);
 			path = BusanApp;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				806A09EB1BAD50F200CC6D98 /* RadiationData.swift in Sources */,
 				334992C21BB69CD7008D290F /* RadioViewController.swift in Sources */,
 				807AC4C41BB860B00096D4E1 /* AlterationLongitudeLatitude .swift in Sources */,
+				1E8584F21BBB9A9F002097AB /* WaterViewController.swift in Sources */,
 				1EDA88231BA904E600C5E93E /* AppDelegate.swift in Sources */,
 				334992CA1BB6DDCD008D290F /* LocationData.swift in Sources */,
 				806A09E91BAD489500CC6D98 /* EnvironmentRadiationInfo.swift in Sources */,

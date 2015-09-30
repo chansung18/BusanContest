@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="812" y="236"/>
         </scene>
-        <!--Dust Raito-->
+        <!--Water View Controller-->
         <scene sceneID="1BY-6B-aKG">
             <objects>
-                <viewController id="3GW-YP-xga" customClass="DustRaito" customModule="BusanApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3GW-YP-xga" customClass="WaterViewController" customModule="BusanApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YkU-Ys-ioa"/>
                         <viewControllerLayoutGuide type="bottom" id="YPq-qW-Ig3"/>
@@ -311,6 +311,9 @@
                                         <exclude reference="XLR-ii-PgR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="3GW-YP-xga" kind="show" identifier="DustSegue" id="VI2-po-fqs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REk-xP-B7m">
                                 <rect key="frame" x="279" y="516" width="42" height="42"/>

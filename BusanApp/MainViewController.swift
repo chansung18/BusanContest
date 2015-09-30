@@ -612,5 +612,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                 destinationViewController.dustValue = (NSNumberFormatter().numberFromString(airQualityParsing.dataSet[0].pm25)?.doubleValue)!
             }
         }
+        else if segue.identifier == "WaterSegue" {
+            if let destinationViewController = segue.destinationViewController as? WaterViewController {
+            }
+        }
     }
 }

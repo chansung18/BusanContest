@@ -69,6 +69,8 @@
 		807AC4CC1BB93F250096D4E1 /* EnvironmentRadiationLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4CB1BB93F250096D4E1 /* EnvironmentRadiationLocationData.swift */; settings = {ASSET_TAGS = (); }; };
 		807AC4D21BB97C650096D4E1 /* AirQualityDistanceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4D11BB97C650096D4E1 /* AirQualityDistanceInfo.swift */; settings = {ASSET_TAGS = (); }; };
 		8089747E1BBBAE8A0021F611 /* WaterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089747D1BBBAE8A0021F611 /* WaterViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		808974821BBBC46F0021F611 /* intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 808974811BBBC46F0021F611 /* intro.png */; settings = {ASSET_TAGS = (); }; };
+		808974841BBBC5560021F611 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 808974831BBBC5560021F611 /* icon.png */; settings = {ASSET_TAGS = (); }; };
 		80C571EE1BAC07EC00024E2F /* DustRaito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C571ED1BAC07EC00024E2F /* DustRaito.swift */; settings = {ASSET_TAGS = (); }; };
 		80D034861BBAA9D500F90F4D /* AirQualityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D034851BBAA9D500F90F4D /* AirQualityPageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		80D06BB01BB552A900A70294 /* WeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D06BAF1BB552A900A70294 /* WeatherParser.swift */; settings = {ASSET_TAGS = (); }; };
@@ -172,6 +174,8 @@
 		807AC4CB1BB93F250096D4E1 /* EnvironmentRadiationLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentRadiationLocationData.swift; sourceTree = "<group>"; };
 		807AC4D11BB97C650096D4E1 /* AirQualityDistanceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityDistanceInfo.swift; sourceTree = "<group>"; };
 		8089747D1BBBAE8A0021F611 /* WaterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewCell.swift; sourceTree = "<group>"; };
+		808974811BBBC46F0021F611 /* intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro.png; sourceTree = "<group>"; };
+		808974831BBBC5560021F611 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		80C571ED1BAC07EC00024E2F /* DustRaito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DustRaito.swift; sourceTree = "<group>"; };
 		80D034851BBAA9D500F90F4D /* AirQualityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityPageViewController.swift; sourceTree = "<group>"; };
 		80D06BAF1BB552A900A70294 /* WeatherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherParser.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 			children = (
 				3327DF481BB924F50079AB52 /* bad.png */,
 				80D595C41BBABF7F001148D9 /* dustcloud.png */,
+				808974811BBBC46F0021F611 /* intro.png */,
 				3327DF491BB924F50079AB52 /* commone.png */,
 				3327DF4A1BB924F50079AB52 /* good.png */,
 				3327DF4B1BB924F50079AB52 /* toobad.png */,
@@ -312,6 +317,7 @@
 				1E8D5EEE1BB4BA81003485A9 /* weatherheaveyrain.png */,
 				1E8D5EEF1BB4BA81003485A9 /* weatherrain.png */,
 				3327DF541BB9B2D90079AB52 /* pointer 2.png */,
+				808974831BBBC5560021F611 /* icon.png */,
 				1E8D5EBE1BB382DF003485A9 /* windspeed.png */,
 				1EE1B7221BB110C100D05BDD /* test_icon1.png */,
 				1EE1B7271BB123FC00D05BDD /* test_icon4.png */,
@@ -468,6 +474,7 @@
 				3327DF4E1BB924F50079AB52 /* good.png in Resources */,
 				3327DF551BB9B2D90079AB52 /* pointer 2.png in Resources */,
 				1EDA882A1BA904E600C5E93E /* Images.xcassets in Resources */,
+				808974821BBBC46F0021F611 /* intro.png in Resources */,
 				1E8D5EF21BB4BA81003485A9 /* partlydoudyweather.png in Resources */,
 				1EE1B76C1BB2225100D05BDD /* test_icon7.png in Resources */,
 				1E8D5EF01BB4BA81003485A9 /* clarweather.png in Resources */,
@@ -492,6 +499,7 @@
 				1EE1B72C1BB1252100D05BDD /* test_icon5.png in Resources */,
 				1EE1B76A1BB2206800D05BDD /* test_icon6.png in Resources */,
 				1EE1B7241BB110C100D05BDD /* test_icon1.png in Resources */,
+				808974841BBBC5560021F611 /* icon.png in Resources */,
 				1E8D5EC01BB382DF003485A9 /* windspeed.png in Resources */,
 				3327DF4C1BB924F50079AB52 /* bad.png in Resources */,
 				3327DF471BB91FD30079AB52 /* pointer.png in Resources */,

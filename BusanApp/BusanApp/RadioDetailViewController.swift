@@ -67,21 +67,27 @@ class RadioDetailViewController: UIViewController {
         
         if (currentRadioValue < 0.03){
             currentLabel.text = "아주좋음"
+            emoticonView.image = UIImage(named: "good")
         }
         else if (currentRadioValue < 0.1){
             currentLabel.text = "좋음"
+            emoticonView.image = UIImage(named: "commone")
         }
         else if (currentRadioValue < 0.3){
             currentLabel.text = "보통"
+            emoticonView.image = UIImage(named: "bad")
         }
         else if (currentRadioValue < 0.5){
             currentLabel.text = "오염간주"
+            emoticonView.image = UIImage(named: "toobad")
         }
         else if (currentRadioValue < 0.8){
             currentLabel.text = "선량한도"
+            emoticonView.image = UIImage(named: "toobad")
         }
         else if (currentRadioValue < 1){
             currentLabel.text = "귀가조치"
+            emoticonView.image = UIImage(named: "toobad")
         }
         
         

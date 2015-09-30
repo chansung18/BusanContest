@@ -118,46 +118,46 @@ class AirQualityViewController: UIViewController, UITableViewDataSource {
         if( smallDustValue < 15.0)
         {
            // smallDustStatus.text = "좋음"
-            cell.smallDustStatusImage.image = UIImage(contentsOfFile: "greencircle")
+            cell.smallDustStatusImage.image = UIImage(named: "greencircle")
         }
         else if( smallDustValue < 55.0)
         {
            // smallDustStatus.text = "보통"
-            cell.smallDustStatusImage.image = UIImage(contentsOfFile: "yellowcircle")
+            cell.smallDustStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
            // smallDustStatus.text = "나쁨"
-            cell.smallDustStatusImage.image = UIImage(contentsOfFile: "redcircle")
+            cell.smallDustStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( coValue < 7.0)
         {
            // coStatus.text = "좋음"
-            cell.coStatusImage.image = UIImage(contentsOfFile: "greencircle")
+            cell.coStatusImage.image = UIImage(named: "greencircle")
         }
         else if( coValue < 11.0)
         {
            // coStatus.text = "보통"
-            cell.coStatusImage.image = UIImage(contentsOfFile: "yellowcircle")
+            cell.coStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
            // coStatus.text = "나쁨"
-            cell.coStatusImage.image = UIImage(contentsOfFile: "redcircle")
+            cell.coStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( noValue < 0.02)
         {
            // noStatus1.text = "좋음"
-            cell.noStatusImage.image = UIImage(contentsOfFile: "greencircle")
+            cell.noStatusImage.image = UIImage(named: "greencircle")
         }
         else if( noValue < 0.03)
         {
            // noStatus1.text = "보통"
-            cell.noStatusImage.image = UIImage(contentsOfFile: "yellowcircle")
+            cell.noStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
            // noStatus1.text = "나쁨"
-            cell.noStatusImage.image = UIImage(contentsOfFile: "redcircle")
+            cell.noStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( so2Value < 2.0)
@@ -175,31 +175,31 @@ class AirQualityViewController: UIViewController, UITableViewDataSource {
         if( ozValue < 0.03)
         {
           //  ozStatus.text = "좋음"
-            cell.ozStatusImage.image = UIImage(contentsOfFile: "greencircle")
+            cell.ozStatusImage.image = UIImage(named: "greencircle")
         }
         else if( ozValue < 0.09)
         {
            // ozStatus.text = "보통"
-            cell.ozStatusImage.image = UIImage(contentsOfFile: "yellowcircle")
+            cell.ozStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
            // ozStatus.text = "나쁨"
-            cell.ozStatusImage.image = UIImage(contentsOfFile: "redcircle")
+            cell.ozStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( dustValue < 30)
         {
            // dustStatus.text = "좋음"
-            cell.dustStatusImage.image = UIImage(contentsOfFile: "greencircle")
+            cell.dustStatusImage.image = UIImage(named: "greencircle")
         }
         else if( dustValue < 80)
         {
           //  dustStatus.text = "보통"
-            cell.dustStatusImage.image = UIImage(contentsOfFile: "yellowcircle")
+            cell.dustStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
            // dustStatus.text = "나쁨"
-            cell.dustStatusImage.image = UIImage(contentsOfFile: "redcircle")
+            cell.dustStatusImage.image = UIImage(named: "redcircle")
         }
 
         

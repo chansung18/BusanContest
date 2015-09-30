@@ -16,6 +16,7 @@ class AirQualityDetailViewController: UIViewController {
     var so2Value = Double()
     var ozValue = Double()
     var dustValue = Double()
+    @IBOutlet weak var areLabel: UILabel!
     
     @IBOutlet weak var smallDustStatusImage: UIImageView!
     @IBOutlet weak var coStatusImage: UIImageView!
@@ -40,73 +41,91 @@ class AirQualityDetailViewController: UIViewController {
         if( smallDustValue < 15.0)
         {
             smallDustStatus.text = "좋음"
+            smallDustStatusImage.image = UIImage(named: "greencircle")
         }
         else if( smallDustValue < 55.0)
         {
             smallDustStatus.text = "보통"
+            smallDustStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
             smallDustStatus.text = "나쁨"
+            smallDustStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( coValue < 7.0)
         {
             coStatus.text = "좋음"
+            coStatusImage.image = UIImage(named: "greencircle")
         }
         else if( coValue < 11.0)
         {
             coStatus.text = "보통"
+            coStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
             coStatus.text = "나쁨"
+            coStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( noValue < 0.02)
         {
             noStatus1.text = "좋음"
+            noStatusImage.image = UIImage(named: "greencircle")
         }
         else if( noValue < 0.03)
         {
             noStatus1.text = "보통"
+            noStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
             noStatus1.text = "나쁨"
+            noStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( so2Value < 2.0)
         {
             so2Status.text = "좋음"
+            so2StatusImage.image = UIImage(named: "redcircle")
         }
         else if( coValue < 5.0)
         {
             so2Status.text = "보통"
+            so2StatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
             so2Status.text = "나쁨"
+            so2StatusImage.image = UIImage(named: "redcircle")
         }
         
         if( ozValue < 0.03)
         {
             ozStatus.text = "좋음"
+            ozStatusImage.image = UIImage(named: "greencircle")
         }
         else if( ozValue < 0.09)
         {
             ozStatus.text = "보통"
+            ozStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
             ozStatus.text = "나쁨"
+            ozStatusImage.image = UIImage(named: "redcircle")
         }
         
         if( dustValue < 30)
         {
             dustStatus.text = "좋음"
+            dustStatusImage.image = UIImage(named: "greencircle")
         }
         else if( dustValue < 80)
         {
             dustStatus.text = "보통"
+            dustStatusImage.image = UIImage(named: "yellowcircle")
         }
         else{
             dustStatus.text = "나쁨"
+            dustStatusImage.image = UIImage(named: "redcircle")
         }
         airDustValue.text = "\(dustValue) PM"
         

@@ -1126,6 +1126,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="airDustValue" destination="a6R-wY-ExS" id="Gwq-sF-0M1"/>
+                        <outlet property="areLabel" destination="d4W-lP-vbp" id="cjQ-hm-CEh"/>
                         <outlet property="coStatus" destination="uoH-5a-caH" id="uW4-Yh-Ld9"/>
                         <outlet property="coStatusImage" destination="1We-T0-jCA" id="eIV-vZ-wUV"/>
                         <outlet property="dustStatus" destination="Ymz-cD-Zef" id="wuc-Ey-Oxd"/>
@@ -1165,13 +1166,6 @@
                                     <constraint firstAttribute="width" constant="65" id="RPy-sd-Mbz"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aAm-sy-q0L">
-                                <rect key="frame" x="28" y="34" width="319" height="36"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRD-1R-2a2">
                                 <rect key="frame" x="67" y="282" width="240" height="128"/>
                                 <subviews>
@@ -1318,6 +1312,13 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aAm-sy-q0L">
+                                <rect key="frame" x="28" y="34" width="319" height="36"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

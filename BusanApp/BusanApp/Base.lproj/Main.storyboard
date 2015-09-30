@@ -1131,6 +1131,7 @@
                         <outlet property="coStatusImage" destination="1We-T0-jCA" id="eIV-vZ-wUV"/>
                         <outlet property="dustStatus" destination="Ymz-cD-Zef" id="wuc-Ey-Oxd"/>
                         <outlet property="dustStatusImage" destination="hVc-6l-Xbl" id="3Jd-PN-KvW"/>
+                        <outlet property="emoticon" destination="Av4-9S-wMq" id="FRf-MM-mcQ"/>
                         <outlet property="noStatus" destination="2OL-jN-oWc" id="fR7-F3-HLN"/>
                         <outlet property="noStatus1" destination="FnL-LK-mJF" id="pkA-RK-oFY"/>
                         <outlet property="noStatusImage" destination="2OL-jN-oWc" id="ahO-e9-xgQ"/>

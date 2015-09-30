@@ -17,6 +17,7 @@ class AirQualityDetailViewController: UIViewController {
     var ozValue = Double()
     var dustValue = Double()
     @IBOutlet weak var areLabel: UILabel!
+    @IBOutlet weak var emoticon: UIImageView!
     
     @IBOutlet weak var smallDustStatusImage: UIImageView!
     @IBOutlet weak var coStatusImage: UIImageView!
@@ -131,7 +132,56 @@ class AirQualityDetailViewController: UIViewController {
         
         
         
+        var resultvalue = 10.0
+        if (smallDustValue < 15.0) {
+            resultvalue = resultvalue - 1.5
+        }
+        else if (smallDustValue < 50.0) {
+            resultvalue = resultvalue - 0.7
+        }
+        if (dustValue < 30.0) {
+            resultvalue = resultvalue - 1.5
+        }
+        else if (dustValue < 80.0) {
+            resultvalue = resultvalue - 0.7
+        }
+        if (ozValue < 0.03) {
+            resultvalue = resultvalue - 1.5
+        }
+        else if (ozValue < 0.09) {
+            resultvalue = resultvalue - 0.7
+        }
+        if (so2Value < 1.00) {
+            resultvalue = resultvalue - 1.5
+        }
+        else if (so2Value > 10.0) {
+            resultvalue = resultvalue + 4.0
+        }
+        if (coValue < 3.00) {
+            resultvalue = resultvalue - 1.5
+        }
+        else if (coValue < 7.0) {
+            resultvalue = resultvalue - 0.7
+        }
+        if (noValue < 0.02) {
+            resultvalue = resultvalue - 1.5
+        }
+        else if (noValue < 0.03) {
+            resultvalue = resultvalue - 0.7
+        }
         
+        if (resultvalue  < 2.5 ){
+            emoticon.image = UIImage(named: "good")
+        }
+        else if (resultvalue < 5.0){
+            emoticon.image = UIImage(named: "commone")
+        }
+        else if (resultvalue < 7.5){
+            emoticon.image = UIImage(named: "bad")
+        }
+        else{
+            emoticon.image = UIImage(named: "toobad")
+        }
         
         
     }

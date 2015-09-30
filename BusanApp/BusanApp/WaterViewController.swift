@@ -23,6 +23,10 @@ class WaterViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        tableView.backgroundColor = UIColor.grayColor()
+        tableView.separatorColor = UIColor.yellowColor()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,18 +47,21 @@ class WaterViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return waterDataSet.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : WaterViewCell = tableView.dequeueReusableCellWithIdentifier("WaterCell") as! WaterViewCell
-//        print("dddd")
-//        cell.streetName.text = waterDataSet[indexPath.row].inspecArea
-//        cell.result.text = waterDataSet[indexPath.row].result
-//        let chemicalElement = waterDataSet[indexPath.row].chemicalElements
-//        cell.gernalGerm.text = "\(chemicalElement[5])"
-//        cell.allGerm.text = "\(chemicalElement[6])"
-//        cell .partGerm.text  =    "\(chemicalElement[7])"
+        print("dddd")
+        cell.backgroundColor = UIColor.clearColor()
+        
+        cell.streetName.text = waterDataSet[indexPath.row].inspecPoint
+        cell.result.text = waterDataSet[indexPath.row].result
+        let chemicalElement = waterDataSet[indexPath.row].chemicalElements
+        cell.gernalGerm.text = "\(chemicalElement[5])"
+        cell.allGerm.text = "\(chemicalElement[6])"
+        cell .partGerm.text  =    "\(chemicalElement[7])"
+        
         
     
         return cell

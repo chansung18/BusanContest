@@ -57,7 +57,7 @@ class RadioViewController: UIViewController, UITableViewDataSource, UITableViewD
         annotation.coordinate = location
         annotation.title = districData.locationName
 //        annotation.subtitle = ("latitude : \(location.latitude) longitude : \(location.longitude)")
-        mapView.setRegion(coordinateRegion, animated: true)
+//        mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotation(annotation)
     }
     
